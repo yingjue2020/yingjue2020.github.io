@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% block html_lang %}{{ article.lang }}{% endblock %}
+{% block head -%}
+  {{ super() -}}
+  {% if article.summary %}
+        <meta name="description" content="{{ article.summary | striptags | safe | truncate(150) }}" />
+  {% endif %}
+{% endblock %}
+
+{% block title %}{{ article.title|striptags }}{% endblock %}
+
+{% block extra_head %}
+{% import 'translations.html' as translations with context %}
+{% if translations.entry_hreflang(article) %}
+  {{ translations.entry_hreflang(article) }}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<section class="single-post-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 post-content" data-aos="fade-up">
+
+        <!-- ======= Single Post Content ======= -->
+        <div class="single-post">
+          <div class="post-meta">
+            <span class="date">{{ article.authors|first }}</span> 
+            <span class="mx-1">&bullet;</span> 
+            <span class="date">{{ article.category }}</span> 
+            <span class="mx-1">&bullet;</span> 
+            <span>{{ article.locale_date }}</span>
+          </div>
+          <h1 class="mb-5">{{ article.title }}</h1>
+          {{ article.content }}
+          
+          <div id="gitalk-container"></div>   
+          <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+          <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+          <script>
+              let gitalk = new Gitalk({
+                  clientID: 'Ov23limoic9J311uhBh4',
+                  clientSecret: 'd21338a7925a3a6723d5cfe0819ce011f79c1d2e',
+                  repo: 'gitalk_forkliu_com',
+                  owner: 'vforkliu',
+                  admin: ['vforkliu'],
+                  id: '{{ article.slug }}',
+                  title: '{{ article.title }}',
+                  distractionFreeMode: false  // Facebook-like distraction free mode
+              });
+              gitalk.render('gitalk-container');
+          </script>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <!-- ======= Sidebar ======= -->
+        <div class="aside-block">
+
+          <ul class="nav nav-pills custom-tab-nav mb-4" id="pills-tab" role="tablist">
+
+            <!-- <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="pills-popular-tab" data-bs-toggle="pill" data-bs-target="#pills-popular" type="button" role="tab" aria-controls="pills-popular" aria-selected="true">Popular</button>
+            </li> -->
+
+            <!-- <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-trending-tab" data-bs-toggle="pill" data-bs-target="#pills-trending" type="button" role="tab" aria-controls="pills-trending" aria-selected="false">Trending</button>
+            </li> -->
+
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-latest-tab" data-bs-toggle="pill" data-bs-target="#pills-latest" type="button" role="tab" aria-controls="pills-latest" aria-selected="false">Latest</button>
+            </li>
+          </ul>
+
+          <div class="tab-content" id="pills-tabContent">
+            <!-- Popular -->
+            <div class="tab-pane fade show active" id="pills-popular" role="tabpanel" aria-labelledby="pills-popular-tab">
+              {% set recent = articles if not all_articles else all_articles %}
+              {% for a in recent %}
+                {% if loop.index <= 6 %}
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">{{ a.category }}</span> <span class="mx-1">&bullet;</span> <span>{{ a.date.strftime('%Y-%m-%d') }}</span></div>
+                    <h2 class="mb-2"><a href="{{ SITEURL }}/{{ a.url }}">{{ a.title }}</a></h2>
+                    <span class="author mb-3 d-block">{{ a.authors|first }}</span>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div> <!-- End Popular -->
+
+            <!-- Trending -->
+            <div class="tab-pane fade" id="pills-trending" role="tabpanel" aria-labelledby="pills-trending-tab">
+              {% set recent = articles if not all_articles else all_articles %}
+              {% for a in recent %}
+                {% if loop.index <= 6 %}
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">{{ a.category }}</span> <span class="mx-1">&bullet;</span> <span>{{ a.date.strftime('%Y-%m-%d') }}</span></div>
+                    <h2 class="mb-2"><a href="{{ SITEURL }}/{{ a.url }}">{{ a.title }}</a></h2>
+                    <span class="author mb-3 d-block">{{ a.authors|first }}</span>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div> <!-- End Trending -->
+
+            <!-- Latest -->
+            <div class="tab-pane fade" id="pills-latest" role="tabpanel" aria-labelledby="pills-latest-tab">
+              {% set recent = articles if not all_articles else all_articles %}
+              {% for a in recent %}
+                {% if loop.index <= 6 %}
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">{{ a.category }}</span> <span class="mx-1">&bullet;</span> <span>{{ a.date.strftime('%Y-%m-%d') }}</span></div>
+                    <h2 class="mb-2"><a href="{{ SITEURL }}/{{ a.url }}">{{ a.title }}</a></h2>
+                    <span class="author mb-3 d-block">{{ a.authors|first }}</span>
+                  </div>
+                {% endif %}
+              {% endfor %}
+
+            </div> <!-- End Latest -->
+
+          </div>
+        </div>
+
+        <!-- <div class="aside-block">
+          <h3 class="aside-title">Video</h3>
+          <div class="video-post">
+            <a href="https://www.youtube.com/watch?v=AiFfDjmd0jU" class="glightbox link-video">
+              <span class="bi-play-fill"></span>
+              <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/post-landscape-5.jpg" alt="" class="img-fluid">
+            </a>
+          </div>
+        </div> -->
+
+        <div class="aside-block">
+          <h3 class="aside-title">Categories</h3>
+          <ul class="aside-links list-unstyled">
+            {% for cat, null in categories %}
+              <li><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+            {% endfor %}
+          </ul>
+        </div><!-- End Categories -->
+
+        <div class="aside-block">
+          <h3 class="aside-title">Tags</h3>
+          <ul class="aside-tags list-unstyled">
+            {% for tag, null in tags %}
+              <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></li>
+            {% endfor %}
+          </ul>
+        </div><!-- End Tags -->
+
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

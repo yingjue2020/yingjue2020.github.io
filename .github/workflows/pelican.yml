@@ -1,0 +1,64 @@
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+env:
+  SETTINGS: "publishconf.py"
+  REQUIREMENTS: "pelican[markdown] typogrify pelican-markdown-include pelican-render-math"
+  OUTPUT_PATH: "output/"
+  PYTHON: "3.12"
+  SITEURL: "https://yingjue.info"
+  FEED_DOMAIN: "https://yingjue.info"
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+permissions:
+  contents: "read"
+  pages: "write"
+  id-token: "write"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON }}
+      - name: Install requirements
+        run: pip install ${{ env.REQUIREMENTS }}
+      - name: Build Pelican site
+        shell: python
+        run: |
+          import subprocess
+
+          cmd = "pelican"
+          cmd += " --settings ${{ env.SETTINGS }}"
+          cmd += " --extra-settings"
+          cmd += """ SITEURL='"${{ env.SITEURL }}"'"""
+          cmd += """ FEED_DOMAIN='"${{ env.FEED_DOMAIN }}"'"""
+          cmd += " --output ${{ env.OUTPUT_PATH }}"
+
+          subprocess.run(cmd, shell=True, check=True)
+      - name: Fix permissions
+        run: |
+          chmod -c -R +rX "${{ env.OUTPUT_PATH }}" | while read line; do
+            echo "::warning title=Invalid file permissions automatically fixed::$line"
+          done
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.OUTPUT_PATH }}
+  deploy:
+    environment:
+      name: github-pages
+      url: https://yingjue2020.github.io
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
