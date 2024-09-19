@@ -1,5 +1,5 @@
 AUTHOR = 'Grape'
-SITENAME = 'YineJue Technology'
+SITENAME = 'YingJue Technology'
 SITEURL = "https://yingjue.info"
 
 PATH = "content"
