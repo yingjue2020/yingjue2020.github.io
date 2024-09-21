@@ -11,8 +11,8 @@ env:
   PYTHON: "3.12"
   SITEURL: "https://yingjue.info"
   FEED_DOMAIN: "https://yingjue.info"
-  GITALK_CLIENT_ID: "{{ GITALK_CLIENT_ID }}"
-  GITALK_CLIENT_SECRET: "{{ GITALK_CLIENT_SECRET }}"
+  GITALK_CLIENT_ID: "${{ secrets.GITALK_CLIENT_ID }}"
+  GITALK_CLIENT_SECRET: "${{ secrets.GITALK_CLIENT_SECRET }}"
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -32,6 +32,10 @@ jobs:
           python-version: ${{ env.PYTHON }}
       - name: Install requirements
         run: pip install ${{ env.REQUIREMENTS }}
+      # - name: Extract env variables
+      #   id: extract_env
+      #   run: |
+      #     echo "GITALK_CLIENT_ID={{ GITALK_CLIENT_ID }}" >> $GITHUB_ENV
       - name: Build Pelican site
         shell: python
         run: |
