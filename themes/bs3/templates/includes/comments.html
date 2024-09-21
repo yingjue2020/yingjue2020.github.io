@@ -43,3 +43,20 @@
 
     </section>
 {% endif %}
+{% if GITALK_REPO_NAME %}
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>{{ _('Comments') }}</h2>
+        <div id="gitalk-container"></div>
+        <script type="text/javascript">
+            var gitalk = new Gitalk({
+                clientID: "{{ GITALK_CLIENT_ID }}",
+                clientSecret: "{{ GITALK_CLIENT_SECRET }}",
+                repo: "{{ GITALK_REPO_NAME }}",
+                owner: "{{ GITALK_REPO_OWNER }}",
+                admin: ["{{ GITALK_REPO_OWNER }}"],
+            });
+            gitalk.render('gitalk-container');
+        </script>
+    </section>
+{% endif %}

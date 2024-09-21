@@ -11,6 +11,8 @@ env:
   PYTHON: "3.12"
   SITEURL: "https://yingjue.info"
   FEED_DOMAIN: "https://yingjue.info"
+  GITALK_CLIENT_ID: "{{ GITALK_CLIENT_ID }}"
+  GITALK_CLIENT_SECRET: "{{ GITALK_CLIENT_SECRET }}"
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -40,6 +42,8 @@ jobs:
           cmd += " --extra-settings"
           cmd += """ SITEURL='"${{ env.SITEURL }}"'"""
           cmd += """ FEED_DOMAIN='"${{ env.FEED_DOMAIN }}"'"""
+          cmd += """ GITALK_CLIENT_ID='"${{ env.GITALK_CLIENT_ID }}"'"""
+          cmd += """ GITALK_CLIENT_SECRET='"${{ env.GITALK_CLIENT_SECRET }}"'"""
           cmd += " --output ${{ env.OUTPUT_PATH }}"
 
           subprocess.run(cmd, shell=True, check=True)

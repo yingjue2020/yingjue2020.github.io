@@ -58,7 +58,6 @@ DISPLAY_PAGES_ON_MENU =False
 MENUITEMS = (
 			('Home','/pages/home/index.html'),
 			)
-DISQUS_SITENAME="theoryandpractice"
 
 THEME = "themes/bs3"
 JINJA_ENVIRONMENT = {
@@ -96,3 +95,6 @@ EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'},
     'extra/app-ads.txt': {'path': 'app-ads.txt'},
 }
+
+GITALK_REPO_NAME = "gitalk_comments"
+GITALK_REPO_OWNER = "yingjue2020"
