@@ -31,7 +31,7 @@ jobs:
         with:
           python-version: ${{ env.PYTHON }}
       - name: Install requirements
-        run: pip install ${{ env.REQUIREMENTS }}
+        run: pip install -r requirements.txt
       # - name: Extract env variables
       #   id: extract_env
       #   run: |
