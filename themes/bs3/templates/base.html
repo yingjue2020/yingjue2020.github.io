@@ -115,10 +115,6 @@
 
     {% include 'includes/ga.html' %}
 
-    {% if GITALK_REPO_NAME %}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-    {% endif %}
-
 </head>
 <body>
 
@@ -242,10 +238,6 @@
 
 {% if 'liquid_tags.notebook' in PLUGINS %}
     {% include 'includes/liquid_tags_nb_footer.html' %}
-{% endif %}
-
-{% if GITALK_REPO_NAME %}
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 {% endif %}
 
 {% block scripts %}{% endblock %}
