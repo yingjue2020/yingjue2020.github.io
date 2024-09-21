@@ -1,9 +1,3 @@
----
-title: 'Kotlin:object 与 companion object 的区别'
-date: 2020-03-16 23:24:33
-tags: kotlin
-categories: kotlin
----
 Title: Kotlin:object 与 companion object 的区别
 Date: 2020-03-16 23:24:33
 Modified: 2020-03-16 23:24:33
