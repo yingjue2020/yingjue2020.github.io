@@ -56,7 +56,7 @@
                 clientSecret: "{{ GITALK_CLIENT_SECRET }}",
                 repo: "{{ GITALK_REPO_NAME }}",
                 owner: "{{ GITALK_REPO_OWNER }}",
-                admin: ["{{ GITALK_REPO_OWNER }}"],
+                admin: "{{ GITALK_REPO_ADMIN }}".split(','),
                 id: "{{article.category}}/{{ article.slug }}",
                 title: '{{ article.title }}',
                 distractionFreeMode: false  // Facebook-like distraction free mode

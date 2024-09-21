@@ -98,3 +98,4 @@ EXTRA_PATH_METADATA = {
 
 GITALK_REPO_NAME = "gitalk_comments"
 GITALK_REPO_OWNER = "yingjue2020"
+GITALK_REPO_ADMIN = "yingjue2020,loveaiinfo,tatamobile,cl66y"
