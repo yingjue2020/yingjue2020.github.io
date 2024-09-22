@@ -3,3 +3,6 @@
 output/
 __pycache__/
 local.properties
+BootHack
+.vscode
+logs

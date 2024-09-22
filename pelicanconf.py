@@ -1,5 +1,5 @@
 AUTHOR = 'Grape'
-SITENAME = 'YingJue Technology'
+SITENAME = 'Yingjue'
 SITEURL = ""
 ORGNIZATION = "Yingjue Technology (Shenzhen) Co., Ltd."
 
@@ -43,8 +43,7 @@ LINKS = (
 
 # Social widget
 SOCIAL = (
-    ("You can add links in your config file", "#"),
-    ("Another social link", "#"),
+    ("github", "https://github.com/yingjue2020"),
 )
 
 DEFAULT_PAGINATION = 10
@@ -55,17 +54,48 @@ I18N_TEMPLATES_LANG = 'en'
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
-DISPLAY_PAGES_ON_MENU =False
-MENUITEMS = (
-			('Home','/pages/home/index.html'),
-			)
 
-THEME = "themes/bs3"
+
+THEME = "themes/pelican-bootstrap3"
 JINJA_ENVIRONMENT = {
   'extensions': ['jinja2.ext.i18n']
 }
-PYGMENTS_STYLE='default'
-BOOTSTRAP_THEME='flatly'
+
+# css
+TYPOGRIFY = True
+CUSTOM_CSS = "extra/custom.css"
+FEED_ALL_ATOM = "feeds.atom"
+FEED_ALL_RSS = "feeds.rss"
+
+PYGMENTS_STYLE='monokai'
+BOOTSTRAP_THEME='readable'
+
+# navbar
+NAVBAR_ELEMENTS = ['menu-items', 'search', 'brand-dropdown']
+DISPLAY_PAGES_ON_MENU =False
+DISPLAY_CATEGORIES_ON_MENU = False
+SITE_LINKS = [
+    ('Home', ''),
+    ('Authors', 'authors'),
+    ('Archives', 'archives'),
+    ('Categories', 'categories'),
+    ('Tags', 'tags'),
+    ('RSS', 'feeds.rss'),
+]
+MENUITEMS = (
+            ('About','pages/about'),
+            ('Projects','pages/projects'),
+            # ('Series',[
+            #     ('Bending Gnome Keyring with Python', 'pages/series/series1'),
+            #     ('PyCon Highlights', 'pages/series/series2'),
+            #     ('Python and UDisks', 'pages/series/series3'),
+            # ]),
+            ('Contact','pages/contact'),
+            
+			)
+GOOGLE_CSE_ID = "012894085892019978793:huhfryqqzaw"
+
+
 BOOTSTRAP_FLUID = True
 DISPLAY_BREADCRUMBS=False
 BOOTSTRAP_NAVBAR_INVERSE=False
@@ -99,7 +129,7 @@ EXTRA_PATH_METADATA = {
     'extra/favicon.png': {'path': 'favicon.png'},  # and this
     'extra/favicon.ico': {'path': 'favicon.ico'},
     'extra/CNAME': {'path': 'CNAME'},
-    'extra/app-ads.txt': {'path': 'app-ads.txt'},
+    'extra/app-ads.txt': {'path': 'app-ads.txt'}
 }
 
 GITALK_REPO_NAME = "gitalk_comments"

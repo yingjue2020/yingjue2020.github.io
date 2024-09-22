@@ -1,9 +1,3 @@
----
-title: 剑指 Offer 第2题：替换空格
-date: 2019-10-17 14:11:43
-tags: [algorithm,strings]
-categories: interview
----
 Title: 剑指 Offer 第2题：替换空格
 Date: 2019-10-17 14:11:43
 Modified: 2019-10-17 14:11:43
