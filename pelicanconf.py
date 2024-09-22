@@ -38,7 +38,7 @@ LINKS = (
     ("Pelican", "https://getpelican.com/"),
     ("Python.org", "https://www.python.org/"),
     ("Jinja2", "https://palletsprojects.com/p/jinja/"),
-    ("You can modify those links in your config file", "#"),
+    ("TATAMOBILE", "https://tatamobile.net"),
 )
 
 # Social widget
@@ -66,7 +66,7 @@ TRANSLATION_FEED_ATOM = None
 
 THEME = "themes/pelican-bootstrap3"
 JINJA_ENVIRONMENT = {
-  'extensions': ['jinja2.ext.i18n']
+  'extensions': ['jinja2.ext.i18n', 'jinja2.ext.do']
 }
 
 # css
@@ -109,10 +109,17 @@ SITE_BANNER_ELEMENTS = ['logo', 'name', 'social']
 SITE_BANNER_BACKGROUND_COLOR = "#eeeeec; background-image: url('/images/gnome-bkg.jpg'); background-position: center top;"
 SITELOGO = "images/MB_logo.png"
 
+# sidebar
+SIDEBAR_ELEMENTS = ['brand', "condensed", "links"]
+# SIDE_BRAND_ELEMENTS = ['logo', 'name', 'links', 'social', 'search']
+SIDE_BRAND_ELEMENTS = ['logo', 'name', 'search', 'links', 'social']
+CONDENSED_SIDEBAR_ITEMS = ['categories', 'tagcloud', 'recent']
+
+DISPLAY_BREADCRUMBS = True
+
 BOOTSTRAP_FLUID = True
-DISPLAY_BREADCRUMBS=False
-BOOTSTRAP_NAVBAR_INVERSE=False
-DISPLAY_RECENT_POSTS_ON_SIDEBAR=True
+# BOOTSTRAP_NAVBAR_INVERSE=False
+# DISPLAY_RECENT_POSTS_ON_SIDEBAR=True
 
 TAG_CLOUD_STEPS = 4
 TAG_CLOUD_BADGE = True  
