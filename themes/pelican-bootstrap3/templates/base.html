@@ -58,6 +58,10 @@
         <meta name="flattr:id" content="{{ FLATTR_ID }}">
     {% endif %}
 
+    {% if GOOGLE_SITE_VERIFICATION %}
+    <meta name="google-site-verification" content="{{ GOOGLE_SITE_VERIFICATION }}" />
+    {% endif %}
+
     <!-- Bootstrap -->
     {% if BOOTSTRAP_THEME %}
         <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bootstrap.{{ BOOTSTRAP_THEME }}.min.css" type="text/css"/>
@@ -123,11 +127,7 @@
 {% endif %}
 
 <!-- Banner -->
-{% if BANNER and BANNER_ALL_PAGES %}
-    {% include 'includes/banner.html' %}
-{% elif BANNER and not BANNER_ALL_PAGES %}
-    {% block banner %}{% endblock %}
-{% endif %}
+{% include 'includes/site-banner.html' %}
 <!-- End Banner -->
 
 <!-- Content Container -->

@@ -1,5 +1,5 @@
 AUTHOR = 'Grape'
-SITENAME = 'Yingjue'
+SITENAME = 'YINGJUE'
 SITEURL = ""
 ORGNIZATION = "Yingjue Technology (Shenzhen) Co., Ltd."
 
@@ -43,7 +43,15 @@ LINKS = (
 
 # Social widget
 SOCIAL = (
-    ("github", "https://github.com/yingjue2020"),
+    ("E-mail", "envelope", "#"),
+    ("GitHub", "github", "https://github.com/yingjue2020"),
+    ("Twitter", "twitter", "#"),
+    ("Google Plus", "google-plus", "#"),
+    ("Facebook", "facebook", "#"),
+    ("Stackoverflow", "stack-overflow", "#"),
+    ("GitTip", "gittip", "#"),
+    ("Linux User", "linux", "#"),
+    ("Feeds", "rss", "feeds.atom"),
 )
 
 DEFAULT_PAGINATION = 10
@@ -95,6 +103,11 @@ MENUITEMS = (
 			)
 GOOGLE_CSE_ID = "012894085892019978793:huhfryqqzaw"
 
+# site banner
+SHOW_SITE_BANNER_IN = ['all']
+SITE_BANNER_ELEMENTS = ['logo', 'name', 'social']
+SITE_BANNER_BACKGROUND_COLOR = "#eeeeec; background-image: url('/images/gnome-bkg.jpg'); background-position: center top;"
+SITELOGO = "images/MB_logo.png"
 
 BOOTSTRAP_FLUID = True
 DISPLAY_BREADCRUMBS=False
