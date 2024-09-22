@@ -110,9 +110,9 @@ SITE_BANNER_BACKGROUND_COLOR = "#eeeeec; background-image: url('/images/gnome-bk
 SITELOGO = "images/MB_logo.png"
 
 # sidebar
-SIDEBAR_ELEMENTS = ['brand', "condensed", "links"]
+SIDEBAR_ELEMENTS = ["condensed", "links"]
 # SIDE_BRAND_ELEMENTS = ['logo', 'name', 'links', 'social', 'search']
-SIDE_BRAND_ELEMENTS = ['logo', 'name', 'search', 'links', 'social']
+SIDE_BRAND_ELEMENTS = ['logo', 'name', 'social']
 CONDENSED_SIDEBAR_ITEMS = ['categories', 'tagcloud', 'recent']
 
 DISPLAY_BREADCRUMBS = True
@@ -122,13 +122,14 @@ BOOTSTRAP_FLUID = True
 # DISPLAY_RECENT_POSTS_ON_SIDEBAR=True
 
 TAG_CLOUD_STEPS = 4
-TAG_CLOUD_BADGE = True  
-DISPLAY_TAGS_ON_SIDEBAR=True
+TAG_CLOUD_BADGE = True
 TAG_CLOUD_MAX_ITEMS=25
-DISPLAY_TAGS_INLINE=True
-HIDE_SIDEBAR=False
-SHOW_SERIES = True
-DISPLAY_SERIES_ON_SIDEBAR = True
+# DISPLAY_TAGS_ON_SIDEBAR=True
+
+# DISPLAY_TAGS_INLINE=True
+# HIDE_SIDEBAR=False
+# SHOW_SERIES = True
+# DISPLAY_SERIES_ON_SIDEBAR = True
 # CC_LICENSE = "CC-BY-SA"
 # CC_LICENSE_COMMERCIAL = "yes"
 # CC_LICENSE_DERIVATIVES = "yes"

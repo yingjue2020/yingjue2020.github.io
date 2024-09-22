@@ -24,12 +24,13 @@
         <aside>
             {% if 'brand' in SIDEBAR_ELEMENTS %}
                 {% include 'sidebar/brand.html' %}
-                {% do SIDEBAR_ELEMENTS.remove('brand') %}
             {% endif %}
             <section class="visible-lg visible-md" id="sidebar-content{% if SIDEBAR_POSITION == 'left' %}-left{% endif %}">
                 <ul class="list-group list-group-flush">
                     {% for element in SIDEBAR_ELEMENTS %}
+                        {% if element != 'brand' %}
                         {% include SIDEBAR_MAP[element] %}
+                        {% endif %}
                     {% endfor %}
                 </ul>
             </section>
