@@ -44,7 +44,7 @@ LINKS = (
 # Social widget
 SOCIAL = (
     ("E-mail", "envelope", "#"),
-    ("GitHub", "github", "https://github.com/yingjue2020"),
+    ("GitHub", "github", "#"),
     ("Twitter", "twitter", "#"),
     ("Google Plus", "google-plus", "#"),
     ("Facebook", "facebook", "#"),
@@ -165,7 +165,7 @@ TAG_CLOUD_MAX_ITEMS=25
 # CC_LICENSE = "CC-BY-SA"
 # CC_LICENSE_COMMERCIAL = "yes"
 # CC_LICENSE_DERIVATIVES = "yes"
-CUSTOM_LICENSE = '<p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>'
+# CUSTOM_LICENSE = '<p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>'
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
