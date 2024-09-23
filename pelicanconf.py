@@ -69,8 +69,11 @@ JINJA_ENVIRONMENT = {
   'extensions': ['jinja2.ext.i18n', 'jinja2.ext.do']
 }
 
+FAVICON = "extra/favicon-32x32.png"
+TOUCHICON = "extra/apple-touch-icon.png"
+
 # css
-TYPOGRIFY = True
+TYPOGRIFY = False
 CUSTOM_CSS = "extra/custom.css"
 FEED_ALL_ATOM = "feeds.atom"
 FEED_ALL_RSS = "feeds.rss"
@@ -101,13 +104,41 @@ MENUITEMS = (
             ('Contact','pages/contact'),
             
 			)
-GOOGLE_CSE_ID = "012894085892019978793:huhfryqqzaw"
+# seo
+GOOGLE_CSE_ID = "d1afdec03092141dc"
+# SITEMAP = {
+#     "format": "xml",
+#     "priorities": {
+#         "articles": 0.5,
+#         "indexes": 0.5,
+#         "pages": 0.5
+#     },
+#     "changefreqs": {
+#         "articles": "monthly",
+#         "indexes": "daily",
+#         "pages": "monthly"
+#     }
+# }
+EXTENDED_SITEMAP_PLUGIN = {
+    'priorities': {
+        'index': 1.0,
+        'articles': 0.8,
+        'pages': 0.5,
+        'others': 0.4
+    },
+    'changefrequencies': {
+        'index': 'daily',
+        'articles': 'weekly',
+        'pages': 'monthly',
+        'others': 'monthly',
+    }
+}
 
 # site banner
 SHOW_SITE_BANNER_IN = ['all']
 SITE_BANNER_ELEMENTS = ['logo', 'name', 'social']
-SITE_BANNER_BACKGROUND_COLOR = "#eeeeec; background-image: url('/images/gnome-bkg.jpg'); background-position: center top;"
-SITELOGO = "images/MB_logo.png"
+SITE_BANNER_BACKGROUND_COLOR = "#eeeeec; background-image: url('/images/background_banner.jpg'); background-position: center top;"
+SITELOGO = "images/logo.png"
 
 # sidebar
 SIDEBAR_ELEMENTS = ["condensed", "links"]
