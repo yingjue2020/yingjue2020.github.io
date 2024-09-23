@@ -106,6 +106,7 @@ MENUITEMS = (
 			)
 # seo
 GOOGLE_CSE_ID = "d1afdec03092141dc"
+GOOGLE_ANALYTICS = "G-7YNPQY01K6"
 # SITEMAP = {
 #     "format": "xml",
 #     "priorities": {
@@ -181,7 +182,8 @@ EXTRA_PATH_METADATA = {
     'extra/favicon.png': {'path': 'favicon.png'},  # and this
     'extra/favicon.ico': {'path': 'favicon.ico'},
     'extra/CNAME': {'path': 'CNAME'},
-    'extra/app-ads.txt': {'path': 'app-ads.txt'}
+    'extra/app-ads.txt': {'path': 'app-ads.txt'},
+    'extra/ads.txt': {'path': 'ads.txt'}
 }
 
 GITALK_REPO_NAME = "gitalk_comments"
