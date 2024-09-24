@@ -15,7 +15,11 @@
             {% set copy_end_date = '' %}
          {% endif %}
          <div class="col-xs-10">
-            <p>&copy; {{ copy_start_date }}-{{ copy_end_date }} {{ ORGNIZATION }}&nbsp;{{ _('All Rights Reserved') }}</p>
+            <p>
+              &copy; {{ copy_start_date }}-{{ copy_end_date }} {{ ORGNIZATION }}&nbsp;
+              <a href="{{ SITEURL }}/privacy.html" target="_blank">Privacy</a>
+              <a href="{{ SITEURL }}/terms.html" target="_blank">Terms</a>
+            </p>
             {% if THEME_FOOTER_LINKS %}
             <p>
             {{ _('Powered by') }} <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>|

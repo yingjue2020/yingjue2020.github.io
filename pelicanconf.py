@@ -1,7 +1,7 @@
 AUTHOR = 'Grape'
 SITENAME = 'YINGJUE'
 SITEURL = ""
-ORGNIZATION = "Yingjue Technology (Shenzhen) Co., Ltd."
+ORGNIZATION = "YINGJUE"
 
 PATH = "content"
 
@@ -184,8 +184,8 @@ EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'},
     'extra/app-ads.txt': {'path': 'app-ads.txt'},
     'extra/ads.txt': {'path': 'ads.txt'},
-    'extra/terms.html': {'path': 'terms.html'},
-    'extra/privacy.html': {'path': 'privacy.html'},
+    'extra/terms.txt': {'path': 'terms.html'},
+    'extra/privacy.txt': {'path': 'privacy.html'},
 }
 
 GITALK_REPO_NAME = "gitalk_comments"
