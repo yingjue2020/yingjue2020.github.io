@@ -1,7 +1,24 @@
-{% extends "article_list.html" %}
+{% if CONTEXT is not defined %}
+    {% set CONTEXT = 'index' %}
+{% endif %}
+{% extends "base.html" %}
+{% block content %}
+    {% if articles %}
+        {% for article in (articles_page.object_list if articles_page else articles) %}
+            <article>
+                <header class="page-header">
+                    <h1><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title|striptags }}</a></h1>
+                    {% include 'includes/article_info.html' %}
+                </header>
+                    <div class="entry-content">
+                    {{ article.summary|replace("<html>","")|replace("<body>","")|replace("</html>","")|replace("</body>","") }}
+                    </div>
+                    <div>
+                        <a id="more" class="btn btn-primary btn-xs pull-right" href="{{ SITEURL }}/{{ article.url }}">More <i class="fa fa-long-arrow-right"></i></a>
+                    </div>
+            </article>
+        {% endfor %}
+    {% endif %}
 
-{% block canonical_rel %}<link rel="canonical" href="{{ SITEURL }}">{% endblock %}
-
-{% block banner %}
-	{% include 'includes/banner.html' %}
-{% endblock %}
+    {% include 'includes/pagination.html' %}
+{% endblock content %}
