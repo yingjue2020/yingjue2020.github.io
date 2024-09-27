@@ -27,8 +27,9 @@ PAGE_SAVE_AS = 'pages/{slug}/index.html'
 AUTHOR_URL = 'author/{slug}/'
 AUTHOR_SAVE_AS = 'author/{slug}/index.html'
 
-CATEGORY_URL = 'category/{slug}/'
-CATEGORY_SAVE_AS = 'category/{slug}/index.html'
+CATEGORIES_URL = "categories"
+CATEGORY_URL = 'categories/{slug}/'
+CATEGORY_SAVE_AS = 'categories/{slug}/index.html'
 
 TAG_URL = 'tag/{slug}/'
 TAG_SAVE_AS = 'tag/{slug}/index.html'
