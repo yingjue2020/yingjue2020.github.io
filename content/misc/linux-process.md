@@ -4,6 +4,7 @@ Modified: 2019-06-27 17:34:15
 Category: Misc
 Tags: Linux
 Slug: linux-process
+Figure: linux.png
 
 # 概念
 程序是一系列指令的集合，通常存为可执行文件。进程是程序的执行过程。

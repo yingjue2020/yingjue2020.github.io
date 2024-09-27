@@ -4,6 +4,7 @@ Modified: 2019-05-11 23:12:27
 Category: Misc
 Tags: 7z, code, page
 Slug: 7z-error-codes
+Figure: windows.jpeg
 
 ## 问题描述
 在Windows 7中文版系统上使用7z压缩一些文件后，然后在Windows 10 Pro英文版系统上解压，发现凡是文件名中包含中文，最后都是乱码。

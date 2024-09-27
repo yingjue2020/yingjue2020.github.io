@@ -4,6 +4,8 @@ Modified: 2019-10-17 14:32:26
 Category: Interview
 Tags: Data Structure, Algorithm
 Slug: ci-08-jump-floor
+Figure: cplusplus.png
+
 ## 题目描述
 ## 思路
 ## 代码

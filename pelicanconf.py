@@ -38,7 +38,7 @@ LINKS = (
     ("Pelican", "https://getpelican.com/"),
     ("Python.org", "https://www.python.org/"),
     ("Jinja2", "https://palletsprojects.com/p/jinja/"),
-    ("TATAMOBILE", "https://tatamobile.net"),
+    # ("TATAMOBILE", "https://tatamobile.net"),
 )
 
 # Social widget
@@ -69,6 +69,10 @@ JINJA_ENVIRONMENT = {
   'extensions': ['jinja2.ext.i18n', 'jinja2.ext.do']
 }
 
+SHOW_DATE_MODIFIED = True
+SHOW_ARTICLE_AUTHOR = True
+SHOW_ARTICLE_CATEGORY = True
+
 FAVICON = "extra/favicon-32x32.png"
 TOUCHICON = "extra/apple-touch-icon.png"
 
@@ -85,6 +89,8 @@ BOOTSTRAP_THEME='readable'
 NAVBAR_ELEMENTS = ['menu-items', 'search', 'brand-dropdown']
 DISPLAY_PAGES_ON_MENU =False
 DISPLAY_CATEGORIES_ON_MENU = False
+SUMMARY_MAX_LENGTH = 64
+SUMMARY_MAX_PARAGRAPHS = 2
 SITE_LINKS = [
     ('Home', ''),
     ('Authors', 'authors'),

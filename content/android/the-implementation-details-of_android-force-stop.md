@@ -4,6 +4,7 @@ Modified: 2019-06-26 18:32:15
 Category: Android
 Tags: Android, AOSP
 Slug: the implementation-details-of-android-force-stop
+Figure: android.png
 
 基于AOSP 8.0.1源码分析force-stop的实现细节。
 

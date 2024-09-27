@@ -4,6 +4,7 @@ Modified: 2019-06-05 09:53:06
 Category: Android
 Tags: Android
 Slug: debug-android-framework-with-android-studio
+Figure: android.png
 
 # 背景
 在阅读Android Framework代码时，有时需要动态调试加深理解，或者想调试某个API的实现原理（如startActivity）时，希望可以使用Android Studio调试，且可以对应到源码的每一行，故需要搭建一个调试环境。

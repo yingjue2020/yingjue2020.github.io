@@ -4,6 +4,7 @@ Modified: 2020-04-04 12:07:38
 Category: Android
 Tags: Android, Logcat
 Slug: android-logcat-usage
+Figure: android.png
 
 ## zsh:no matches found
 

@@ -4,6 +4,7 @@ Modified: 2020-03-26 01:00:22
 Category: Android
 Tags: Kotlin
 Slug: kotlin-run-code-with-vscode
+Figure: kotlin.png
 
 ## 安装扩展
 - Kotlin Language

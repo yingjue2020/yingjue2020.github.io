@@ -4,6 +4,8 @@ Modified: 2019-10-17 14:34:11
 Category: Interview
 Tags: Data Structure, Algorithm
 Slug: ci-11-number-of-1
+Figure: cplusplus.png
+
 ## 题目描述
 ## 思路
 ## 代码

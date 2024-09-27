@@ -4,6 +4,7 @@ Modified: 2019-05-23 11:14:28
 Category: Misc
 Tags: Docker
 Slug: docker-basics
+Figure: docker.png
 
 # 自定义镜像
 

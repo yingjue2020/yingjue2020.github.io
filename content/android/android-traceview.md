@@ -4,6 +4,7 @@ Modified: 2019-04-24 14:04:01
 Category: Android
 Tags: Android, Instrumentation
 Slug: android-traceview
+Figure: android.png
 
 # 使用方法
 

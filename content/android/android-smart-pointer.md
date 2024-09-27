@@ -4,6 +4,7 @@ Modified: 2019-05-24 12:55:08
 Category: Android
 Tags: Android, SmartPointer
 Slug: android-smart-pointer
+Figure: android.png
 
 # 相关源码
 http://androidxref.com/6.0.1_r10/xref/system/core/include/utils/StrongPointer.h

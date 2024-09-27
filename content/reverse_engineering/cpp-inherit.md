@@ -4,6 +4,7 @@ Modified: 2019-05-27 09:46:12
 Category: Reverse Engineering
 Tags: C++, Arm
 Slug: cpp-inherit
+Figure: cplusplus.png
 
 
 ```shell

@@ -4,6 +4,7 @@ Modified: 2020-03-29 20:22:06
 Category: Reverse Engineering
 Tags: Frida
 Slug: frida-basic-usage-for-android
+Figure: frida.png
 
 ## 环境搭建
 frida-server : 12.8.19

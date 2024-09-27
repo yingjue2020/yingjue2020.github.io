@@ -4,6 +4,7 @@ Modified: 2024-09-27 10:50
 Category: Reverse Engineering
 Tags: IDA Pro
 Slug: learn-ida-part-1-setup-environment
+Figure: idapro.png
 
 # Background
 

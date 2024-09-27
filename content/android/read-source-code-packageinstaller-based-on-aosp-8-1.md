@@ -4,6 +4,7 @@ Modified: 2019-08-22 10:00:24
 Category: Android
 Tags: AOSP
 Slug: read-source-code-packageinstaller
+Figure: android.png
 
 ## PackageInstallerSession
 源码位置：[PackageInstallerSession.java](http://androidxref.com/8.1.0_r33/xref/frameworks/base/services/core/java/com/android/server/pm/PackageInstallerSession.java) 。

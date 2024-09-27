@@ -4,6 +4,7 @@ Modified: 2019-05-15 10:38:54
 Category: Android
 Tags: Android, ClassLoader
 Slug: android-classloader
+Figure: android.png
 
 # Class
 ```java

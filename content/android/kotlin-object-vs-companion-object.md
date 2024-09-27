@@ -4,6 +4,7 @@ Modified: 2020-03-16 23:24:33
 Category: Android
 Tags: Kotlin
 Slug: kotlin-object-vs-companion-object
+Figure: kotlin.png
 
 ## 区别
 

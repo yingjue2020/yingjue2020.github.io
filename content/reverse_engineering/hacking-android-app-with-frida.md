@@ -4,6 +4,7 @@ Modified: 2019-04-24 17:35:05
 Category: Reverse Engineering
 Tags: Frida, Android
 Slug: hacking-android-app-with-frida
+Figure: frida.png
 
 # 环境安装
 - frida-server

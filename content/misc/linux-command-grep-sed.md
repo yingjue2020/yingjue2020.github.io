@@ -4,6 +4,7 @@ Modified: 2020-03-25 22:41:10
 Category: Misc
 Tags: Linux
 Slug: linux-command-grep-sed
+Figure: linux.png
 
 如何利用grep和sed实现搜索和替换
 ```bash

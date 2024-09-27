@@ -4,6 +4,7 @@ Modified: 2020-03-24 17:46:35
 Category: Misc
 Tags: Linux
 Slug: linux-command-rsync
+Figure: linux.png
 
 Linux 下合并两个目录，软连接也一起同步。
 ```bash

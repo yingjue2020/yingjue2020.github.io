@@ -4,6 +4,8 @@ Modified: 2019-10-17 14:31:55
 Category: Interview
 Tags: Data Structure, Algorithm
 Slug: ci-07-fibonacci
+Figure: cplusplus.png
+
 ## 题目描述
 ## 思路
 ## 代码

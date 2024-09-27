@@ -4,6 +4,8 @@ Modified: 2024-09-25 10:56:00
 Category: Reverse Engineering
 Tags: jailbreak, palera1n
 Slug: jailbreak-palera1n
+Summary: Building iOS environment for reverse engineering. How to jailbreak iOS 15~18 using palera1n. Install Sileo and frida .
+Figure: palera1n.png
 
 ## Download palera1n
 

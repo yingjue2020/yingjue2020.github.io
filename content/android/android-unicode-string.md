@@ -4,6 +4,7 @@ Modified: 2019-05-24 13:05:38
 Category: Android
 Tags: Android, Unicode
 Slug: android-unicode-string
+Figure: android.png
 
 # 相关源码
 

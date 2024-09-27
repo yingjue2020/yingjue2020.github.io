@@ -1,14 +1,10 @@
----
-title: Java 知识点
-date: 2019-05-13 11:06:28
-tags: Java
----
 Title: Java 知识点
 Date: 2019-05-13 11:06:28
 Modified: 2019-05-13 11:06:28
 Category: Android
 Tags: Java
 Slug: java-tips
+Figure: java.png
 
 # 可变参数
 变长参数是 Java 的一个语法糖，本质上还是基于数组的实现：

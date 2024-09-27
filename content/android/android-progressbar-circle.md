@@ -4,6 +4,7 @@ Modified: 2019-05-13 14:37:26
 Category: Android
 Tags: Android, ProgressBar
 Slug: android-progressbar-circle
+Figure: android.png
 
 
 # Shape

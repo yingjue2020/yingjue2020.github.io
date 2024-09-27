@@ -4,6 +4,7 @@ Modified: 2020-03-31 10:33:59
 Category: Reverse Engineering
 Tags: Android App
 Slug: parse-zhuishushenqi
+Figure: binary.jpg
 
 章节内容解密
 ```java

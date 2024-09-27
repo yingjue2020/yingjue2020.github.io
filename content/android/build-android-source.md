@@ -1,15 +1,10 @@
----
-title: Android 源码开发
-date: 2019-05-23 15:20:41
-tags: android
----
-
 Title: Android 源码开发
 Date: 2019-05-23 15:20:41
 Modified: 2019-05-23 15:20:41
 Category: Android
 Tags: Android
 Slug: build-android-sourcecode
+Figure: android.png
 
 # 准备开发环境
 使用docker-aosp搭建

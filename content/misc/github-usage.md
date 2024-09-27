@@ -4,6 +4,7 @@ Modified: 2019-05-13 00:07:46
 Category: Misc
 Tags: Git, Github
 Slug: github-usage
+Figure: git.png
 
 # 创建ssh-key 并且重命名
 ```shell
