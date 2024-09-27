@@ -14,9 +14,9 @@
             {% set copy_start_date = '' %}
             {% set copy_end_date = '' %}
          {% endif %}
-         <div class="col-xs-10">
-            <p>
-              &copy; {{ copy_start_date }}-{{ copy_end_date }} {{ ORGNIZATION }}&nbsp;
+         <div class="col-xs-12">
+            <p class="text-center">
+              &copy; {{ copy_end_date }} {{ ORGNIZATION }}&nbsp;
               <a href="{{ SITEURL }}/privacy.html" target="_blank">Privacy</a>
               <a href="{{ SITEURL }}/terms.html" target="_blank">Terms</a>
             </p>
@@ -34,7 +34,6 @@
               <p>{{ CUSTOM_LICENSE }}</p>
             {% endif %}
          </div>
-         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">{{ _('Back to top') }}</a></p></div>
       </div>
    </div>
 </footer>
