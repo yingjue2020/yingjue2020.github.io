@@ -233,10 +233,10 @@ article h1 {
     padding: 0 0 0 15px;
 }
 
-#article-datetime i, #article-author i, #article-comment-count i, #article-category i {
+#article-datetime i, #article-modifiedtime i, #article-author i, #article-comment-count i, #article-category i {
     margin-right: 5px;
 }
-#article-author i, #article-comment-count i, #article-category i {
+#article-modifiedtime i, #article-author i, #article-comment-count i, #article-category i {
     margin-left: 15px;
 }
 

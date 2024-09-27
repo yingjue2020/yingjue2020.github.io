@@ -7,7 +7,7 @@
     </span>
     {% if SHOW_DATE_MODIFIED %}
         {% if article.modified %}
-            <span id="article-datetime">
+            <span id="article-modifiedtime">
                 <i class="fa fa-calendar"></i><time datetime="{{ article.modified.isoformat() }}"> {{ article.modified.strftime('%Y-%m-%d %H:%M') }}</time>
             </span>
         {% endif %}
