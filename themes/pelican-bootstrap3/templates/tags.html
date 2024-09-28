@@ -13,25 +13,63 @@
 
 {% block content %}
     <section id="tags">
-        <h1>{{ _('Tags for') }} {{ SITENAME }}</h1>
-        <div class="panel-group" id="accordion">
-            {%- for tag, articles in tags|sort %}
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-{{tag.slug}}">{{ tag }} <span class="badge pull-right">{{ articles|count }}</span></a>
-                    </h4>
-                </div>
-                <div id="collapse-{{tag.slug}}" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        {% for article in articles %}
-                        <p><span class="categories-timestamp"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></span> <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></p>
-                        {% endfor %}
+        <article>
+            <h1>Tags for {{ SITENAME }}</h1>
+            <div class="col-md-6 col-md-offset-6" id="tag-search">
+                <form class="form-search">
+                    <div class="input-group ">
+                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                        <input type="text" class="form-control filterinput" placeholder="Find a tag">
                     </div>
-                </div>
+                </form>
             </div>
-            {% endfor %}
-        </div>
 
+            <ul class="list-group list-inline" id="all-tags">
+                {%- for tag, articles in tags|sort %}
+                    <li class="list-group-item">
+                        <span class="label label-default">
+                            <a class="with-tooltip" href="{{ SITEURL }}/{{ tag.url }}" data-placement="top" data-toggle="tooltip" data-original-title="{{ articles|count }} article(s)">{{ tag|lower }}</a>
+                    </span>
+                    </li>
+                {% endfor %}
+            </div>
+        </article>
     </section>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+    (function ($) {
+        // custom css expression for a case-insensitive contains()
+        jQuery.expr[':'].Contains = function(a,i,m){
+            return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+        };
+
+        function listFilter() {
+
+            $('.filterinput')
+            .change( function () {
+                var filter = $(this).val();
+                if(filter) {
+                    // this finds all links in a list that contain the input,
+                    // and hide the ones not containing the input while showing the ones that do
+                    $('#all-tags').find("a:not(:Contains(" + filter + "))").parent().parent().hide();
+                    $('#all-tags').find("a:Contains(" + filter + ")").parent().parent().show();
+                } else {
+                    $('#all-tags').find("li").show();
+                }
+                return false;
+            })
+            .keyup( function () {
+                // fire the above change event after every letter
+                $(this).change();
+            });
+        }
+
+        //ondomready
+        $(function () {
+            listFilter($());
+        });
+    }(jQuery));
+</script>
 {% endblock %}
