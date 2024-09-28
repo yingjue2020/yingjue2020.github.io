@@ -9,6 +9,11 @@ TIMEZONE = 'Asia/Shanghai'
 
 DEFAULT_LANG = 'en'
 
+AUTHORS = {
+  'Grape': {'avatar': '/images/avatars/grape.jpeg'},
+  'Apple': {'avatar': '/images/avatars/apple.jpeg'}
+}
+
 # THEME = "themes/zend"
 
 # Feed generation is usually not desired when developing
@@ -24,8 +29,9 @@ ARTICLE_SAVE_AS = '{category}/{slug}/index.html'
 PAGE_URL = '{slug}'
 PAGE_SAVE_AS = '{slug}/index.html'
 
-AUTHOR_URL = 'author/{slug}'
-AUTHOR_SAVE_AS = 'author/{slug}/index.html'
+AUTHORS_URL = "authors"
+AUTHOR_URL = 'authors/{slug}'
+AUTHOR_SAVE_AS = 'authors/{slug}/index.html'
 
 CATEGORIES_URL = "categories"
 CATEGORY_URL = 'categories/{slug}'
