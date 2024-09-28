@@ -23,3 +23,9 @@ http://mindbending.org/en
 ## TODO
 - GOOGLE_CSE_ID (https://programmablesearchengine.google.com/controlpanel/overview?cx=d1afdec03092141dc)
 - GOOGLE_SITE_VERIFICATION
+- index done
+- categories category done
+- tags tag
+- article
+- page
+- authors author
