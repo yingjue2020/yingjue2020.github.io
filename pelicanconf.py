@@ -18,21 +18,22 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-ARTICLE_URL = 'posts/{category}/{slug}/'
-ARTICLE_SAVE_AS = 'posts/{category}/{slug}/index.html'
+ARTICLE_URL = '{category}/{slug}'
+ARTICLE_SAVE_AS = '{category}/{slug}/index.html'
 
-PAGE_URL = 'pages/{slug}/'
-PAGE_SAVE_AS = 'pages/{slug}/index.html'
+PAGE_URL = '{slug}'
+PAGE_SAVE_AS = '{slug}/index.html'
 
-AUTHOR_URL = 'author/{slug}/'
+AUTHOR_URL = 'author/{slug}'
 AUTHOR_SAVE_AS = 'author/{slug}/index.html'
 
 CATEGORIES_URL = "categories"
-CATEGORY_URL = 'categories/{slug}/'
+CATEGORY_URL = 'categories/{slug}'
 CATEGORY_SAVE_AS = 'categories/{slug}/index.html'
 
-TAG_URL = 'tag/{slug}/'
-TAG_SAVE_AS = 'tag/{slug}/index.html'
+TAGS_URL = "tags"
+TAG_URL = 'tags/{slug}'
+TAG_SAVE_AS = 'tags/{slug}/index.html'
 
 # Blogroll
 LINKS = (
@@ -101,14 +102,14 @@ SITE_LINKS = [
     ('RSS', 'feeds.rss'),
 ]
 MENUITEMS = (
-            ('About','pages/about'),
-            ('Projects','pages/projects'),
+            ('About','about'),
+            ('Projects','projects'),
             # ('Series',[
             #     ('Bending Gnome Keyring with Python', 'pages/series/series1'),
             #     ('PyCon Highlights', 'pages/series/series2'),
             #     ('Python and UDisks', 'pages/series/series3'),
             # ]),
-            ('Contact','pages/contact'),
+            ('Contact','contact'),
             
 			)
 # seo
