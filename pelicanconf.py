@@ -10,8 +10,8 @@ TIMEZONE = 'Asia/Shanghai'
 DEFAULT_LANG = 'en'
 
 AUTHORS = {
-  'Grape': {'avatar': '/images/avatars/grape.jpeg'},
-  'Apple': {'avatar': '/images/avatars/apple.jpeg'}
+  'Grape': {'avatar': '/images/avatars/grape.png'},
+  'Apple': {'avatar': '/images/avatars/apple.png'}
 }
 
 # THEME = "themes/zend"
