@@ -56,7 +56,7 @@
             <ol class="breadcrumb">
                 <li><a href="{{ SITEURL }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i></a></li>
                 <li><a href="{{ SITEURL }}/{{ article.category.url }}" title="{{ article.category }}">{{ article.category }}</a></li>
-                <li class="active">{{ article.title }}</li>
+                <li class="active"><a href="" title="{{ article.title }}">{{ article.title }}</a></li>
             </ol>
         {% else %}
             <ol class="breadcrumb">
@@ -74,20 +74,24 @@
                 <h1>
                     <a href="{{ SITEURL }}/{{ article.url }}"
                        rel="bookmark"
-                       title="{{ _('Permalink to') }} {{ article.title|striptags }}">
+                       title="Permalink to {{ article.title|striptags }}">
                         {{ article.title }}
                     </a>
                 </h1>
+                {% include "includes/article_info.html" %}
             </header>
+            <div class="summary">
+                <p class="lead">{{ article.description }}</p>
+            </div>
             <div class="entry-content">
-                <div class="panel">
-                    <div class="panel-body">
-                        {% include "includes/article_info.html" %}
-                    </div>
-                </div>
-                {{ article.content }}
+                {{ article.content|replace("<html>","")|replace("<body>","")|replace("</html>","")|replace("</body>","") }}
             </div>
             <!-- /.entry-content -->
+            {% if AUTHORS is defined and article.author.name in AUTHORS %}
+                {% set _author = AUTHORS[article.author.name] %}
+                {% set author = article.author %}
+                {% include 'includes/author-bio.html' %}
+            {% endif %}
             {% include 'includes/related-posts.html' %}
             {% include 'includes/series.html' %}
             {% include 'includes/addthis.html' %}

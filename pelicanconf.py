@@ -40,8 +40,8 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-ARTICLE_URL = '{category}/{slug}'
-ARTICLE_SAVE_AS = '{category}/{slug}/index.html'
+ARTICLE_URL = 'categories/{category}/{slug}'
+ARTICLE_SAVE_AS = 'categories/{category}/{slug}/index.html'
 
 PAGE_URL = '{slug}'
 PAGE_SAVE_AS = '{slug}/index.html'
@@ -179,6 +179,7 @@ SIDE_BRAND_ELEMENTS = ['logo', 'name', 'social']
 CONDENSED_SIDEBAR_ITEMS = ['categories', 'tagcloud', 'recent']
 
 DISPLAY_BREADCRUMBS = True
+DISPLAY_CATEGORY_IN_BREADCRUMBS = True
 
 BOOTSTRAP_FLUID = False
 # BOOTSTRAP_NAVBAR_INVERSE=False
