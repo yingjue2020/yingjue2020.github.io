@@ -10,8 +10,25 @@ TIMEZONE = 'Asia/Shanghai'
 DEFAULT_LANG = 'en'
 
 AUTHORS = {
-  'Grape': {'avatar': '/images/avatars/grape.png'},
-  'Apple': {'avatar': '/images/avatars/apple.png'}
+  'Grape': {
+    'avatar': '/images/avatars/grape.png',
+    'bio': "Graduated in Computer Science and Engineering, but currently working with GNU/Linux infrastructure and in the spare time I'm an Open Source programmer (Python and C), a drawer and author in the YINGJUE Blog.",
+    'links': [
+        ("GitHub", "github", "#"),
+        ("Twitter", "twitter", "#"),
+        ("Google Plus", "google-plus", "#"),
+        ("Facebook", "facebook", "#"),
+    ]
+  },
+  'Apple': {'avatar': '/images/avatars/apple.png',
+  'bio': "Graduated in Computer Science and Engineering, but currently working with GNU/Linux infrastructure and in the spare time I'm an Open Source programmer (Python and C), a drawer and author in the YINGJUE Blog.",
+  'links': [
+        ("GitHub", "github", "#"),
+        ("Twitter", "twitter", "#"),
+        ("Google Plus", "google-plus", "#"),
+        ("Facebook", "facebook", "#"),
+    ]
+  }
 }
 
 # THEME = "themes/zend"
