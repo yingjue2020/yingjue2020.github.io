@@ -4,7 +4,7 @@ Modified: 2019-10-17 14:32:55
 Category: Interview
 Tags: Data Structure, Algorithm
 Slug: ci-09-jump-floor-ii
-Figure: cplusplus.png
+Figure: offer.png
 
 ## 题目描述
 ## 思路

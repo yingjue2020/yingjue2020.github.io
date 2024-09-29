@@ -4,7 +4,7 @@ Modified: 2019-10-17 14:13:21
 Category: Interview
 Tags: Data Structure, Algorithm
 Slug: ci-03-print-list-from-tail-to-head
-Figure: cplusplus.png
+Figure: offer.png
 
 ## 题目描述
 输入一个链表，按链表从尾到头的顺序返回一个ArrayList。
