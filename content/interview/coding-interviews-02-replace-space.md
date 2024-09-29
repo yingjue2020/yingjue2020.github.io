@@ -4,7 +4,7 @@ Modified: 2019-10-17 14:11:43
 Category: Interview
 Tags: Data Structure, Algorithm
 Slug: ci-02-replace-space
-Figure: cplusplus.png
+Figure: offer.png
 Authors: Apple
 
 ## 题目描述

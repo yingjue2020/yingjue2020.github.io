@@ -4,7 +4,7 @@ Modified: 2019-05-29 15:06:06
 Category: Interview
 Tags: Data Structure, Algorithm
 Slug: lc-0050-pow
-Figure: cplusplus.png
+Figure: leetcode.png
 
 # 问题描述
 https://leetcode.com/problems/powx-n/

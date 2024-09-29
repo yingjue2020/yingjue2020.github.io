@@ -4,7 +4,7 @@ Modified: 2019-10-17 14:15:31
 Category: Interview
 Tags: Data Structure, Algorithm
 Slug: ci-05-queue-with-two-stacks
-Figure: cplusplus.png
+Figure: offer.png
 
 ## 题目描述
 ## 思路
