@@ -1,0 +1,3 @@
+[submodule "themes/pelican-bootstrap5"]
+	path = themes/pelican-bootstrap5
+	url = https://github.com/tatamobile/pelican-boostrap5.git
