@@ -31,8 +31,6 @@ AUTHORS = {
   }
 }
 
-# THEME = "themes/zend"
-
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
@@ -89,7 +87,7 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
 
-THEME = "themes/pelican-bootstrap3"
+THEME = "themes/pelican-bootstrap5"
 JINJA_ENVIRONMENT = {
   'extensions': ['jinja2.ext.i18n', 'jinja2.ext.do']
 }

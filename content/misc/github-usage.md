@@ -56,3 +56,12 @@ git switch --orphan <new branch>
 git commit --allow-empty -m "Initial commit on orphan branch"
 git push -u origin <new branch>
 ```
+
+## Submodule
+```bash
+git submodule add <remote url> <local url>
+git submodule add https://github.com/tatamobile/pelican-boostrap5.git themes/pelican-bootstrap5
+
+git submodule update --init
+git submodule update --init --recursive
+```
