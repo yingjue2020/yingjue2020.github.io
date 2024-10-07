@@ -19,6 +19,7 @@ pelican-i18n-subsites==0.9.0
 pelican-markdown-include==1.0.4
 pelican-related-posts==1.0.0
 pelican-render-math==1.0.3
+pelican-search==1.1.0
 pelican-series==3.0.0
 py3dns==4.0.2
 Pygments==2.18.0
@@ -26,6 +27,7 @@ python-dateutil==2.9.0.post0
 pytz==2024.2
 PyYAML==6.0.2
 rich==13.8.1
+rtoml==0.9.0
 six==1.16.0
 smartypants==2.0.1
 smmap==5.0.1
