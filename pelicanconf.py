@@ -106,7 +106,7 @@ FEED_ALL_ATOM = "feeds.atom"
 FEED_ALL_RSS = "feeds.rss"
 
 PYGMENTS_STYLE='monokai'
-BOOTSTRAP_THEME='readable'
+BOOTSTRAP_THEME='zephyr'
 
 # navbar
 NAVBAR_ELEMENTS = ['menu-items', 'search', 'brand-dropdown']
