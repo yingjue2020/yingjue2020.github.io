@@ -7,6 +7,13 @@ Slug: upgrade-bootstrap-from-v3-to-v5
 Figure: bootstrap.jpeg
 Authors: Apple
 
+水平居中div
+
+```html
+<div class="d-flex justify-content-center">
+</div>
+```
+
 
 ## References
 - [bootstrap3-upgrade-bootstrap5](https://www.liuzhining.com/post/bootstrap3-upgrade-bootstrap5)
