@@ -1,3 +1,6 @@
+from datetime import datetime
+NOW = datetime.now()
+
 AUTHOR = 'Grape'
 SITENAME = 'YINGJUE'
 SITEURL = ""
@@ -109,7 +112,7 @@ PYGMENTS_STYLE='monokai'
 BOOTSTRAP_THEME='zephyr'
 
 # navbar
-NAVBAR_ELEMENTS = ['menu-items', 'search', 'brand-dropdown']
+NAVBAR_ELEMENTS = ['menu-items', 'brand-simple']
 DISPLAY_PAGES_ON_MENU =False
 DISPLAY_CATEGORIES_ON_MENU = False
 SUMMARY_MAX_LENGTH = 64
@@ -123,16 +126,12 @@ SITE_LINKS = [
     ('RSS', 'feeds.rss'),
 ]
 MENUITEMS = (
-            ('About','about'),
-            ('Projects','projects'),
-            # ('Series',[
-            #     ('Bending Gnome Keyring with Python', 'pages/series/series1'),
-            #     ('PyCon Highlights', 'pages/series/series2'),
-            #     ('Python and UDisks', 'pages/series/series3'),
-            # ]),
-            ('Contact','contact'),
-            
-			)
+            ('Archives', 'archives'),
+            ('Categories', 'categories'),
+            ('Tags', 'tags'),
+            ('Authors', 'authors'),
+            ('RSS', 'feeds.rss'),
+)
 # seo
 GOOGLE_CSE_ID = "d1afdec03092141dc"
 GOOGLE_ANALYTICS = "G-7YNPQY01K6"
