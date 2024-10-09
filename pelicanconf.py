@@ -95,6 +95,7 @@ JINJA_ENVIRONMENT = {
   'extensions': ['jinja2.ext.i18n', 'jinja2.ext.do']
 }
 
+RELATED_POSTS_MAX = 10
 SHOW_DATE_MODIFIED = True
 SHOW_ARTICLE_AUTHOR = True
 SHOW_ARTICLE_CATEGORY = True
