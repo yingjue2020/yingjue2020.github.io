@@ -1,6 +1,26 @@
 from datetime import datetime
 NOW = datetime.now()
 
+def custom_page_range(current_page_num, page_count):
+    if page_count <=5:
+        return range(1, page_count + 1)
+    start = current_page_num - 2
+    delta_s = 0
+    if start <= 0:
+        delta_s = 2 - current_page_num + 1
+        start = 1
+    end = current_page_num + 2 + delta_s
+    delta_e = 0
+    if end > page_count:
+        delta_e = end - page_count
+        end = page_count
+    start = start - delta_e
+    return list(range(start, end + 1))
+
+JINJA_GLOBALS = {
+    'rose_page_range': custom_page_range,
+}
+
 AUTHOR = 'Grape'
 SITENAME = 'YINGJUE'
 SITEURL = ""
