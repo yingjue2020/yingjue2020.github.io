@@ -65,3 +65,9 @@ git submodule add https://github.com/tatamobile/pelican-boostrap5.git themes/pel
 git submodule update --init
 git submodule update --init --recursive
 ```
+
+__用zip加密压缩文件和目录__
+
+```bash
+zip -e -r keys.zip keys
+```

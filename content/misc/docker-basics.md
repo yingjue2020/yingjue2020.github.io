@@ -1,10 +1,36 @@
-Title: docker 基础
+Title: Docker 基础
 Date: 2019-05-23 11:14:28
 Modified: 2019-05-23 11:14:28
 Category: Misc
 Tags: Docker
 Slug: docker-basics
 Figure: docker.png
+
+
+__Dockerizing a Python Flask App__
+
+Install nginx 1.27.2
+
+```bash
+docker pull nginx:1.27.2
+docker pull python:3.13
+```
+
+```yaml
+services:
+  web:
+    container_name: example_nginx
+    image: nginx:1.27.2
+    privileged: true
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - "$PWD/html:/usr/share/nginx/html:rw"
+      - "$PWD/conf/conf.d:/etc/nginx/conf.d"
+      - "$PWD/logs:/var/log/nginx"
+      - "$PWD/certs:/etc/nginx/certs"
+```
 
 # 自定义镜像
 
