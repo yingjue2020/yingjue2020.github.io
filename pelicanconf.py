@@ -61,6 +61,8 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+RELATED_POSTS_CAROUSEL = False
+
 ARTICLE_URL = 'categories/{category}/{slug}'
 ARTICLE_SAVE_AS = 'categories/{category}/{slug}/index.html'
 
@@ -144,17 +146,17 @@ SITE_LINKS = [
     ('Archives', 'archives'),
     ('Categories', 'categories'),
     ('Tags', 'tags'),
-    ('RSS', 'feeds.rss'),
+    # ('RSS', 'feeds.rss'),
 ]
 MENUITEMS = (
             ('Archives', 'archives'),
             ('Categories', 'categories'),
             ('Tags', 'tags'),
             ('Authors', 'authors'),
-            ('RSS', 'feeds.rss'),
+            # ('RSS', 'feeds.rss'),
 )
 # seo
-GOOGLE_CSE_ID = "d1afdec03092141dc"
+# GOOGLE_CSE_ID = "d1afdec03092141dc"
 GOOGLE_ANALYTICS = "G-7YNPQY01K6"
 # SITEMAP = {
 #     "format": "xml",
@@ -185,6 +187,7 @@ EXTENDED_SITEMAP_PLUGIN = {
 }
 
 # site banner
+HIDE_SITE_BANNER = True
 SHOW_SITE_BANNER_IN = ['all']
 SITE_BANNER_ELEMENTS = ['logo', 'name', 'social']
 SITE_BANNER_BACKGROUND_COLOR = "#eeeeec; background-image: url('/images/background_banner.jpg'); background-position: center top;"
