@@ -200,7 +200,7 @@ SIDEBAR_ELEMENTS = ["condensed", "links"]
 SIDE_BRAND_ELEMENTS = ['logo', 'name', 'social']
 CONDENSED_SIDEBAR_ITEMS = ['categories', 'tagcloud', 'recent']
 
-DISPLAY_BREADCRUMBS = True
+DISPLAY_BREADCRUMBS = False
 DISPLAY_CATEGORY_IN_BREADCRUMBS = True
 
 BOOTSTRAP_FLUID = False
