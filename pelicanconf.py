@@ -128,6 +128,7 @@ TOUCHICON = "extra/apple-touch-icon.png"
 # css
 TYPOGRIFY = False
 CUSTOM_CSS = "extra/custom.css"
+CUSTOM_JS = "extra/custom.js"
 FEED_ALL_ATOM = "feeds.atom"
 FEED_ALL_RSS = "feeds.rss"
 
