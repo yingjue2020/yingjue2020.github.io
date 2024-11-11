@@ -159,6 +159,8 @@ MENUITEMS = (
 # seo
 # GOOGLE_CSE_ID = "d1afdec03092141dc"
 GOOGLE_ANALYTICS = "G-7YNPQY01K6"
+ADSENSE_ID = "ca-pub-4403496704855214"
+ADSENSE_SLOT_ID = "5654114561"
 # SITEMAP = {
 #     "format": "xml",
 #     "priorities": {
@@ -195,7 +197,7 @@ SITE_BANNER_BACKGROUND_COLOR = "#eeeeec; background-image: url('/images/backgrou
 SITELOGO = "images/logo.png"
 
 # sidebar
-SIDEBAR_ELEMENTS = ["condensed", "links"]
+SIDEBAR_ELEMENTS = ["condensed", "links", "adsense"]
 # SIDE_BRAND_ELEMENTS = ['logo', 'name', 'links', 'social', 'search']
 SIDE_BRAND_ELEMENTS = ['logo', 'name', 'social']
 CONDENSED_SIDEBAR_ITEMS = ['categories', 'tagcloud', 'recent']
