@@ -1,10 +1,28 @@
 Title: Github Usage
 Date: 2019-05-13 00:07:46
-Modified: 2019-05-13 00:07:46
+Modified: 2024-11-21 00:07:46
 Category: Misc
 Tags: Git, Github
 Slug: github-usage
 Figure: git.png
+
+**子模块**
+
+递归更新子模块：
+```bash
+git submodule add <remote url> <local url>
+git submodule add https://github.com/tatamobile/pelican-boostrap5.git themes/pelican-bootstrap5
+
+git submodule update --init
+git submodule update --init --recursive
+```
+
+```bash
+git archive -o v0.0.1.zip main
+eval `ssh-agent -s`
+GitHub
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
 
 # 创建ssh-key 并且重命名
 ```shell
@@ -55,15 +73,6 @@ git archive -o v0.0.1.zip main
 git switch --orphan <new branch>
 git commit --allow-empty -m "Initial commit on orphan branch"
 git push -u origin <new branch>
-```
-
-## Submodule
-```bash
-git submodule add <remote url> <local url>
-git submodule add https://github.com/tatamobile/pelican-boostrap5.git themes/pelican-bootstrap5
-
-git submodule update --init
-git submodule update --init --recursive
 ```
 
 __用zip加密压缩文件和目录__

@@ -1,11 +1,22 @@
 Title: How to jailbreak iOS 16 using palera1n
 Date: 2024-09-25 10:56:00
-Modified: 2024-09-25 10:56:00
+Modified: 2024-11-21 10:56:00
 Category: Reverse Engineering
 Tags: jailbreak, palera1n
 Slug: jailbreak-palera1n
 Summary: Building iOS environment for reverse engineering. How to jailbreak iOS 15~18 using palera1n. Install Sileo and frida .
 Figure: palera1n.png
+
+Q: **Build may be slow as Theos isn’t using all available CPU cores on this computer.**
+
+参考链接：[Parallel Building](https://theos.dev/docs/parallel-building)
+
+步骤：
+
+```bash
+brew install make
+echo PATH=\"$(brew --prefix make)/libexec/gnubin:\$PATH\" >> ~/.zprofile
+```
 
 ## Download palera1n
 
