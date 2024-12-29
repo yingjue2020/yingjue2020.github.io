@@ -1,6 +1,6 @@
 Title: How to jailbreak iOS 16 using palera1n
 Date: 2024-09-25 10:56:00
-Modified: 2024-11-21 10:56:00
+Modified: 2024-12-29 10:56:00
 Category: Reverse Engineering
 Tags: jailbreak, palera1n
 Slug: jailbreak-palera1n
@@ -18,30 +18,34 @@ brew install make
 echo PATH=\"$(brew --prefix make)/libexec/gnubin:\$PATH\" >> ~/.zprofile
 ```
 
-## Download palera1n
+Q: **palera1n loader app can't disappear after jailbreak on iPhone X(16.7.10)**
+
+Reference Link: [palera1n #541](https://github.com/palera1n/palera1n/issues/541)
+
+- Restore iPhone by Finder
+- Don't use passcode
+- Turn off "Find My Device"
+
+## How to jailbreak iPhone
+### Download palera1n
 
 Download [palera1n](https://palera.in/download/?tab=macos) on Mac:
 ```bash
 sudo /bin/sh -c "$(curl -fsSL https://static.palera.in/scripts/install.sh)"
 ```
 
-## Rootless jailbreak
+### Rootless jailbreak
 ```bash
 palera1n -l
 ```
 
-If palera1n is not installed, please run command:
-```bash
-palera1n -f
-```
-
-## Install Sileo
+### Install Sileo
 Open palera1n app and then install Sileo .
 
 - install ssh: Open Sileo app and search ssh,install ssh-server and ssh-client .
 - install frida: https://build.frida.re
 
-## Enable ssh root
+### Enable ssh root
 
 Install iproxy: brew install libusbmuxd
 
@@ -61,3 +65,25 @@ sudo passwd root
 ```
 
 ![palera1n enable ssh root]({static}/images/palera1n_enable_ssh_root.png)
+
+## How to install ipa
+
+Install ideviceinstaller:
+
+```bash
+brew install libimobiledevice
+brew install ideviceinstaller
+```
+
+Install ipa:
+
+```bash
+ideviceinstaller -i <path_to_your_app>.ipa
+ideviceinstaller -l
+ideviceinstaller -u <bundle_id>
+ideviceinstaller -r -i <path_to_your_app>.ipa
+```
+
+## Common sources
+
+- Frida: https://build.frida.re
