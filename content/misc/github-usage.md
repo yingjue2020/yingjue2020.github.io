@@ -6,6 +6,18 @@ Tags: Git, Github
 Slug: github-usage
 Figure: git.png
 
+如何修改第一条的作者信息
+
+```bash
+git commit --amend --author="developer <developer@yingjue.info>" --no-edit
+```
+
+如何修改第一条注释信息
+
+```bash
+git commit --amend
+```
+
 **子模块**
 
 递归更新子模块：
