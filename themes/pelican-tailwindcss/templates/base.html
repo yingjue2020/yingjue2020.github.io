@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock %}">
+<head>
+    <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if FAVICON %}
+    <link href="{{ SITEURL }}/{{ FAVICON }}" rel="icon">
+    {% endif %}
+    {% if TOUCHICON %}
+    <link rel="apple-touch-icon" href="{{ SITEURL }}/{{ TOUCHICON }}">
+    {% endif %}
+    {% block canonical_rel %}{% endblock %}
+
+    {% block meta %}
+        <meta name="author" content="{{ AUTHOR }}" />
+    {% endblock %}
+
+    {# Twitter Cards tags #}
+    {% include 'includes/twitter_cards.html' %}
+
+    
+    {% if FEED_ALL_ATOM %}
+        <link href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed"/>
+    {% endif %}
+    {% if FEED_ALL_RSS %}
+        <link href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed"/>
+    {% endif %}
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    
+    {% if GOOGLE_SITE_VERIFICATION %}
+    <meta name="google-site-verification" content="{{ GOOGLE_SITE_VERIFICATION }}" />
+    {% endif %}
+    {% if GOOGLE_ANALYTICS %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_ANALYTICS }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ GOOGLE_ANALYTICS }}');
+    </script>
+    {% endif %}
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+{% if not HIDE_NAVBAR|default(False) %}
+    {% include 'includes/navbar.html' %}
+{% endif %}
+
+<!-- Banner -->
+{% if not HIDE_SITE_BANNER|default(False) %}
+    {% include 'includes/site-banner.html' %}
+{% endif %}
+<!-- End Banner -->
+<div class="container{% if BOOTSTRAP_FLUID %}-fluid{% endif %}">
+    <div class="row">
+        {% if CONTEXT in HIDE_SIDEBAR_IN %}
+            <div class ="col-xs-12 col-md-10 offset-md-1">
+        {% else %}
+            {% if SIDEBAR_POSITION == 'right' %}
+                <div class="col-xs-12 col-md-8">
+            {% else %}
+                <div class="col-xs-12 col-md-8 order-md-last">
+            {% endif %}
+        {% endif %}
+            {% block breadcrumbs %}
+            {% endblock %}
+            {% block content %}
+            {% endblock %}
+        </div>
+        {% include 'sidebar/base.html' %}
+    </div>
+</div>
+<!-- End Content Container -->
+
+{% include 'includes/footer.html' %}
+{% include 'includes/sidebar/github-js.html' %}
+{% include 'includes/disqus_script.html' %}
+{% include 'includes/piwik.html' %}
+{% if 'liquid_tags.notebook' in PLUGINS %}
+    {% include 'includes/liquid_tags_nb_footer.html' %}
+{% endif %}
+{% block scripts %}
+{% endblock %}
+</body>
+</html>

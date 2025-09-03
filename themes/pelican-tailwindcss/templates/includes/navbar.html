@@ -1,0 +1,94 @@
+{% if NAVBAR_ELEMENTS is not defined %}
+    {% set NAVBAR_ELEMENTS = ['brand-simple', 'menu-items', 'social'] %}
+{% endif %}
+
+<nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            {% if 'brand-dropdown' in NAVBAR_ELEMENTS %}
+                <li class="nav-item dropdown">
+                    <a data-bs-toggle="dropdown" class="navbar-brand dropdown-toggle" href="{{ SITEURL }}/">{{ SITENAME }}</a>
+                    {% if SITE_LINKS %}
+                    <ul class="dropdown-menu">
+                        {% for name, link in SITE_LINKS %}
+                        <li><a a class="dropdown-item" href="{{ SITEURL }}/{{ link }}">{{ name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </li>
+            {% endif %}
+            {% if 'brand-simple' in NAVBAR_ELEMENTS %}
+                <li class="nav-item"><a class="navbar-brand nav-link" href="{{ SITEURL }}/{{ link }}">{{ SITENAME }}</a></li>
+            {% endif %}
+
+
+            {% if 'menu-items' in NAVBAR_ELEMENTS %}
+                {% for title, link in MENUITEMS %}
+                    {% if link is string %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ SITEURL }}/{{ link }}">{{ title }}</a>
+                        </li>
+                    {% else %}
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">{{ title }}</a>
+                        <ul class="dropdown-menu">
+                        {% for title, target in link %}
+                        <li><a class="dropdown-item" href="{{ SITEURL }}/{{ target }}">{{ title }}</a></li>
+                        {% endfor %}
+                        </ul>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            {% if DISPLAY_PAGES_ON_MENU %}
+                {% for p in PAGES %}
+                        <li class="nav-item">
+                            <a class="nav-link {{ 'active' if p == page else '' }}" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
+                        </li>
+                    {% endfor %}
+            {% endif %}
+            {% if DISPLAY_CATEGORIES_ON_MENU %}
+                {% for cat, null in categories %}
+                    <li class="nav-item">
+                        <a class="nav-link {{ 'active' if cat == category else '' }}" href="{{ SITEURL }}/{{ cat.url }}">{{ cat | capitalize }}</a>
+                    </li>
+                {% endfor %}
+            {% endif %}
+
+            </ul>
+
+            {% if 'search' in NAVBAR_ELEMENTS and GOOGLE_CSE_ID %}
+                <form class="d-flex" action="http://google.com/cse" class="navbar-form" role="search" id="cse-search-box">
+                    <div class="input-group">
+                        <input type="hidden" value="{{ GOOGLE_CSE_ID }}" name="cx">
+                        <input type="hidden" value="UTF-8" name="ie">
+                        <input type="text" id="srch-term" name="q" placeholder="Search" class="form-control me-2">
+                        <span class="input-group-append">
+                            <button type="submit" value="search" name="sa" class="btn btn-outline-secondary">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            {% endif %}
+
+            {% if 'social' in NAVBAR_ELEMENTS %}
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <p class="navbar-text">
+                        {% for name, link in SOCIAL %}
+                                <a class="navbar-link social-nav-link" href="{{ link }}"><i class="fa fa-{{ name|lower|replace('+','-plus') }} fa-lg"></i></a>
+                        {% endfor %}
+                    </p>
+                </li>
+            </ul>
+            {% endif %}
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</nav> <!-- /.navbar -->
+

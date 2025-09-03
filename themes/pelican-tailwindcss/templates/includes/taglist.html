@@ -1,0 +1,16 @@
+{% if article.tags and not ARTICLE_TAGS_IN_SIDEBAR %}
+	<span id="article-tags" class="d-none d-md-block">
+        <ul class="list-group list-group-horizontal">
+            <li class="list-group-item">
+                <i class="fa fa-tags"></i>
+            </li>
+		    {% for tag in article.tags %}
+                <li class="list-group-item ps-1">
+                    <span class="label label-default">
+                    <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+                    </span>
+                </li>
+            {% endfor %}
+        </ul>
+	</span>
+{% endif %}
