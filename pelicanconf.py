@@ -244,6 +244,7 @@ EXTRA_PATH_METADATA = {
     'extra/privacy.txt': {'path': 'privacy.html'},
 }
 
-GITALK_REPO_NAME = "gitalk_comments"
-GITALK_REPO_OWNER = "yingjue2020"
-GITALK_REPO_ADMIN = "yingjue2020"
+GISGUS_REPO_NAME = "yingjue2020/yingjue2020.github.io"
+GISGUS_REPO_ID = "MDEwOlJlcG9zaXRvcnkxODE5OTg4NTc="
+GISGUS_CATEGORY_NAME = "Announcements"
+GISGUS_CATEGORY_ID = "DIC_kwDOCtkVCc4Culyf"
