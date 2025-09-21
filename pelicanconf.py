@@ -90,17 +90,17 @@ LINKS = (
 )
 
 # Social widget
-SOCIAL = (
-    ("E-mail", "envelope", "#"),
-    ("GitHub", "github", "#"),
-    ("Twitter", "twitter", "#"),
-    ("Google Plus", "google-plus", "#"),
-    ("Facebook", "facebook", "#"),
-    ("Stackoverflow", "stack-overflow", "#"),
-    ("GitTip", "gittip", "#"),
-    ("Linux User", "linux", "#"),
-    ("Feeds", "rss", "feeds.atom"),
-)
+# SOCIAL = (
+#     ("E-mail", "envelope", "#"),
+#     ("GitHub", "github", "#"),
+#     ("Twitter", "twitter", "#"),
+#     ("Google Plus", "google-plus", "#"),
+#     ("Facebook", "facebook", "#"),
+#     ("Stackoverflow", "stack-overflow", "#"),
+#     ("GitTip", "gittip", "#"),
+#     ("Linux User", "linux", "#"),
+#     ("Feeds", "rss", "feeds.atom"),
+# )
 
 DEFAULT_PAGINATION = 10
 
@@ -112,7 +112,8 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
 
-THEME = "themes/pelican-bootstrap5"
+#THEME = "themes/pelican-bootstrap5"
+THEME = "themes/papyrus"
 JINJA_ENVIRONMENT = {
   'extensions': ['jinja2.ext.i18n', 'jinja2.ext.do']
 }
@@ -187,6 +188,18 @@ EXTENDED_SITEMAP_PLUGIN = {
         'pages': 'monthly',
         'others': 'monthly',
     }
+}
+
+MARKDOWN = {
+    "extension_configs": {
+        # Needed for code syntax highlighting
+        "markdown.extensions.codehilite": {"css_class": "highlight"},
+        "markdown.extensions.extra": {},
+        "markdown.extensions.meta": {},
+        # This is for enabling the TOC generation
+        "markdown.extensions.toc": {"title": "Table of Contents"},
+    },
+    "output_format": "html5",
 }
 
 # site banner

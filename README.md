@@ -30,3 +30,10 @@ http://mindbending.org/en
 - page
 - authors author
 - archives done
+
+## Build local environment
+
+```bash
+pelican --autoreload --listen --ignore-cache
+pelican -o output -s pelicanconf.py -v -e SITEURL='"http://127.0.0.1:8000"'
+```
