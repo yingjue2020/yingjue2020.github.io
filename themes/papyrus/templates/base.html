@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
+<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}" x-data="{ dark: false }" x-init="dark = window.matchMedia('(prefers-color-scheme: dark)').matches">
 
 <head>
     {% block head %}
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1" />
     <meta name="generator" content="Pelican" />
     <meta name="description" content="{{ SITENAME }} Blog Posts">
     <title>{% block title %} {{ SITENAME }} {% endblock %}</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+    </style>
+    <script defer src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/alpine-3.15.0.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
-    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/main.css" />
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygment.css" />
     <link rel="shortcut icon" href="{{ SITEURL }}/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/stork.css">
-    <link rel="stylesheet" media="screen and (prefers-color-scheme: dark)"
-        href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/stork-dark.css">
     {% if FEED_ALL_ATOM %}
     <link
         href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}"
@@ -29,50 +29,34 @@
     {% endblock head %}
 </head>
 
-<body class="min-h-screen flex flex-col max-w-7xl lg:max-w-none text-zinc-800 bg-neutral-100 
-    dark:bg-neutral-900 dark:text-zinc-300 container mx-auto justify-center md:px-3 ">
-    <script>
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
-                '(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark')
-        }
-    </script>
-    <nav class="sm:flex sm:justify-between xl:ml-32 pl-4 items-center">
-        <div class="flex pt-4">
-            <h1 class="font-semibold text-2xl"><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
-            <button id="theme-toggle" type="button" aria-label="Light|Dark"
-                class="text-zinc-700 dark:text-zinc-400 rounded-full focus:outline-none text-sm ml-2 p-1">
-                <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                </svg>
-                <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                        fill-rule="evenodd" clip-rule="evenodd"></path>
-                </svg>
-            </button>
+<body :class="{ 'dark': dark }" class="min-h-screen text-zinc-800 bg-neutral-100 dark:bg-neutral-900 dark:text-zinc-300">
+    <nav class="sticky top-0 z-50 bg-white dark:bg-neutral-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-10 flex items-center justify-between">
+            <a class="h-8 flex items-center" href="{{ SITEURL }}"><img src="{{ SITEURL }}/images/logo.png" alt="{{ SITENAME }}" class="h-6 w-auto" /></a>
+            <ul class="flex justify-center items-center">
+                <li class="h-8">
+                    <button type="button" class="p-1" @click="dark = !dark">
+                        <span class="sr-only">Dark Mode Toggle</span>
+                        <svg x-show="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                            <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd" />
+                        </svg>
+                        <svg x-show="!dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                            <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+                        </svg>
+                    </button>
+                </li>
+                {% if FEED_ALL_RSS %}
+                <li>
+                    <a class="block p-1" href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}" type="application/rss+xml" title="{{ FEED_ALL_RSS }}" rel="alternate">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                            <path fill-rule="evenodd" d="M3.75 4.5a.75.75 0 0 1 .75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 0 1-.75.75h-.75a.75.75 0 0 1-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 0 1-.75-.75V4.5Zm0 6.75a.75.75 0 0 1 .75-.75h.75a8.25 8.25 0 0 1 8.25 8.25v.75a.75.75 0 0 1-.75.75H12a.75.75 0 0 1-.75-.75v-.75a6 6 0 0 0-6-6H4.5a.75.75 0 0 1-.75-.75v-.75Zm0 7.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+            
         </div>
-        <ul class="flex flex-wrap lg:mr-24 md:pt-0">
-            {% if DISPLAY_PAGES_ON_MENU %}
-            {% for p in pages %}
-            <li class="mr-4 pt-6"><a {% if p==page %} class="border-b-2 border-zinc-800 dark:border-zinc-300"
-                    {% endif %} href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
-            {% endfor %}
-            {% endif %}
-            <li class="mr-4 pt-6"><a {% if current=="archive" %} class="border-b-2 border-zinc-800 dark:border-zinc-300"
-                    {% endif %} href="{{ SITEURL }}/archives.html">Archive</a></li>
-            <li class="mr-4 pt-6"><a {% if current=="categories" %}
-                    class="border-b-2 border-zinc-800 dark:border-zinc-300" {% endif %}
-                    href="{{ SITEURL }}/categories.html">Categories</a></li>
-            <li class="mr-4 pt-6"><a {% if current=="tags" %} class="border-b-2 border-zinc-800 dark:border-zinc-300"
-                    {% endif %} href="{{ SITEURL }}/tags.html">Tags</a></li>
-            <li class="mr-4 pt-6"><a {% if current=="search" %} class="border-b-2 border-zinc-800 dark:border-zinc-300"
-                    {% endif %} href="{{ SITEURL }}/search.html">Search</a></li>
-        </ul>
     </nav>
     <div class="flex-grow md:max-w-screen-md md:mx-auto md:w-3/4 px-4">
         {% if article %}
@@ -202,55 +186,14 @@
         {% endif %}
         {% block content %} {% endblock %}
     </div>
-    <footer class="flex w-full text-xs justify-center mt-10 mb-6 text-zinc-600 dark:text-zinc-400">
-        <div class="px-4">
-            <span>{% if COPYRIGHT %}{{ COPYRIGHT }}&nbsp;&#8226;&nbsp;{% endif %}</span>Powered by
-            <a class="underline" href="https://getpelican.com/">Pelican</a>&nbsp;&
-            <a class="underline" href="https://github.com/aleylara/Papyrus">Papyrus</a>
+    <footer class="w-full text-xs mt-12 py-6 text-zinc-600 dark:text-zinc-400 border-t border-gray-200 dark:border-gray-700">
+        <div class="text-center">
+            {% if COPYRIGHT %}
+                {{ COPYRIGHT }}
+            {% else %}
+                © 2025 Paprus. All rights reserved.
+            {% endif %}
         </div>
     </footer>
-
-    {% include 'analytics.html' %}
-    {% include 'disqus_script.html' %}
-
-    <script>
-        let themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-        let themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
-                '(prefers-color-scheme: dark)').matches)) {
-            themeToggleLightIcon.classList.remove('hidden');
-        } else {
-            themeToggleDarkIcon.classList.remove('hidden');
-        }
-        let themeToggleBtn = document.getElementById('theme-toggle');
-        themeToggleBtn.addEventListener('click', function () {
-            themeToggleDarkIcon.classList.toggle('hidden');
-            themeToggleLightIcon.classList.toggle('hidden');
-            if (localStorage.getItem('color-theme')) {
-                if (localStorage.getItem('color-theme') === 'light') {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('color-theme', 'dark');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('color-theme', 'light');
-                }
-            } else {
-                if (document.documentElement.classList.contains('dark')) {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('color-theme', 'light');
-                } else {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('color-theme', 'dark');
-                }
-            }
-        });
-    </script>
-    {% if current == "search" %}
-    <script src="https://files.stork-search.net/releases/v1.5.0/stork.js"></script>
-    <script>
-        stork.register("sitesearch", "{{ SITEURL }}/search-index.st")
-    </script>
-    {% endif %}
 </body>
-
 </html>

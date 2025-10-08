@@ -1,20 +1,40 @@
 {% if DEFAULT_PAGINATION %}
 {% set first_page = articles_paginator.page(1) %}
 {% set last_page = articles_paginator.page(articles_paginator.num_pages) %}
-<div class="relative h-12 mt-3">
-    {% if articles_page.has_previous() %}
+<ol class="flex justify-center items-center">
+    <li>
     <a href="{{ SITEURL }}/{{ articles_previous_page.url }}">
-        <button
-            class="bg-zinc-800 dark:bg-zinc-300 rounded-full py-2.5 px-4 text-zinc-100 dark:text-zinc-800  font-medium text-xs absolute left-0">
-            &laquo; Prev Page
-        </button></a>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+        <path fill-rule="evenodd" d="M10.72 11.47a.75.75 0 0 0 0 1.06l7.5 7.5a.75.75 0 1 0 1.06-1.06L12.31 12l6.97-6.97a.75.75 0 0 0-1.06-1.06l-7.5 7.5Z" clip-rule="evenodd" />
+        <path fill-rule="evenodd" d="M4.72 11.47a.75.75 0 0 0 0 1.06l7.5 7.5a.75.75 0 1 0 1.06-1.06L6.31 12l6.97-6.97a.75.75 0 0 0-1.06-1.06l-7.5 7.5Z" clip-rule="evenodd" />
+        </svg>
+    </a>
+    </li>
+    {% if articles_page.has_previous() %}
+    <li>
+    <a href="{{ SITEURL }}/{{ articles_previous_page.url }}">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+            <path fill-rule="evenodd" d="M7.72 12.53a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 1 1 1.06 1.06L9.31 12l6.97 6.97a.75.75 0 1 1-1.06 1.06l-7.5-7.5Z" clip-rule="evenodd" />
+        </svg>
+    </a>
+    </li>
     {% endif %}
     {% if articles_page.has_next() %}
+    <li>
     <a href="{{ SITEURL }}/{{ articles_next_page.url }}">
-        <button
-            class="bg-zinc-800 dark:bg-zinc-300 rounded-full py-2.5 px-4 text-zinc-100 dark:text-zinc-800 font-medium text-xs absolute right-0">
-            Next Page &raquo;
-        </button></a>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+            <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd" />
+        </svg>
+    </a>
+    </li>
     {% endif %}
-</div>
+    <li>
+    <a href="{{ SITEURL }}/{{ articles_next_page.url }}">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+        <path fill-rule="evenodd" d="M13.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L11.69 12 4.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd" />
+        <path fill-rule="evenodd" d="M19.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06L17.69 12l-6.97-6.97a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd" />
+        </svg>
+    </a>
+    </li>
+</ol>
 {% endif %}

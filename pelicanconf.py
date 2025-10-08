@@ -90,17 +90,17 @@ LINKS = (
 )
 
 # Social widget
-# SOCIAL = (
-#     ("E-mail", "envelope", "#"),
-#     ("GitHub", "github", "#"),
-#     ("Twitter", "twitter", "#"),
-#     ("Google Plus", "google-plus", "#"),
-#     ("Facebook", "facebook", "#"),
-#     ("Stackoverflow", "stack-overflow", "#"),
-#     ("GitTip", "gittip", "#"),
-#     ("Linux User", "linux", "#"),
-#     ("Feeds", "rss", "feeds.atom"),
-# )
+SOCIAL = (
+    ("E-mail", "envelope"),
+    ("GitHub", "github"),
+    ("Twitter", "twitter"),
+    ("Google Plus", "google-plus"),
+    ("Facebook", "facebook"),
+    ("Stackoverflow", "stack-overflow"),
+    ("GitTip", "gittip"),
+    ("Linux User", "linux"),
+    ("Feeds", "rss"),
+)
 
 DEFAULT_PAGINATION = 10
 
@@ -261,3 +261,6 @@ GISGUS_REPO_NAME = "yingjue2020/yingjue2020.github.io"
 GISGUS_REPO_ID = "MDEwOlJlcG9zaXRvcnkxODE5OTg4NTc="
 GISGUS_CATEGORY_NAME = "Announcements"
 GISGUS_CATEGORY_ID = "DIC_kwDOCtkVCc4Culyf"
+
+SUBTITLE = "Yingjue's Blog"
+SUBTEXT = "I'm a drawer and author in the YINGJUE Blog."
