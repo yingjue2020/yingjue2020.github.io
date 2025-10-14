@@ -58,7 +58,9 @@
             
         </div>
     </nav>
-    <div class="flex-grow md:max-w-screen-md md:mx-auto md:w-3/4 px-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Content Area -->
+        <main class="lg:col-span-3">
         {% if article %}
         <nav class="text-zinc-800 dark:text-zinc-300 mt-12 pb-2 md:mt-16" aria-label="Breadcrumb">
             <ul class="p-0 inline-flex items-center">
@@ -185,6 +187,37 @@
         </nav>
         {% endif %}
         {% block content %} {% endblock %}
+        </main>
+        <aside class="space-y-4">
+            {% if ADSENSE_SLOT_ID %}
+            <!-- AD -->
+            <div class="p-4">
+            </div>
+            {% endif %}
+
+            <!-- Recent Posts -->
+            <div class="bg-white dark:bg-zinc-800 rounded-lg p-4">
+                <h3 class="font-semibold text-xl mb-3">Recent Posts</h3>
+                {% if RECENT_POST_COUNT is not defined %}
+                    {% set RECENT_POST_COUNT = 5 %}
+                {% endif %}
+                <ul class="space-y-2 pl-2">
+                    {% for article in articles[:RECENT_POST_COUNT] %}
+                    <li><a href="{{ SITEURL }}/{{ article.url }}" class="text-zinc-800 dark:text-zinc-400">{{ article.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- Categories -->
+            <div class="bg-white dark:bg-zinc-800 shadow rounded-lg p-4">
+                <h3 class="font-semibold text-xl mb-3">Categories</h3>
+                <ul class="space-y-2 pl-2">
+                    {% for category, articles in categories %}
+                    <li><a href="{{ SITEURL }}/{{ category.url }}" class="text-zinc-800 dark:text-zinc-400">{{ category }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </aside>
     </div>
     <footer class="w-full text-xs mt-12 py-6 text-zinc-600 dark:text-zinc-400 border-t border-gray-200 dark:border-gray-700">
         <div class="text-center">
