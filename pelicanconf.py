@@ -264,3 +264,4 @@ GISGUS_CATEGORY_ID = "DIC_kwDOCtkVCc4Culyf"
 
 SUBTITLE = "Yingjue's Blog"
 SUBTEXT = "I'm a drawer and author in the YINGJUE Blog."
+COPYRIGHT = "© 2025 YINGJUE. All rights reserved."
