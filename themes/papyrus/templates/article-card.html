@@ -1,0 +1,28 @@
+<div>
+<a href="{{ SITEURL }}/{{ article.url }}">
+<li class="flex items-center space-x-4 p-2 bg-white dark:bg-zinc-800 rounded-lg">
+    <div class="flex-shrink-0">
+        <img src="{{ SITEURL }}/images/{% if article.figure %}cover/{{ article.figure }}{% else %}logo.png{% endif %}" class="h-25 w-auto" />
+    </div>
+    <div class="flex flex-col flex-1">
+        <h1 class="font-semibold text-lg">{{ article.title}}</h1>
+        <div class="flex text-xs">
+            <time>{{ article.date|strftime('%B %d, %Y') }}</time>
+            <div>
+            {% if article.readtime %}
+            <span>&nbsp;·&nbsp;{{ article.readtime }} min read</span>
+            {% endif %}
+            </div>
+            <div>
+            {% if article.author != '' %}
+            <span>&nbsp;·&nbsp;{{ article.author }}</span>
+            {% endif %}
+            </div>
+        </div>
+        <div class="flex-grow mt-4">
+            {{ article.summary }}
+        </div>
+    </div>
+</li>
+</a>
+</div>
