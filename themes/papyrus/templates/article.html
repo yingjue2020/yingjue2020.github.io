@@ -77,25 +77,31 @@
         </li>
       {% endfor %}
     </ul>
-    <div class="flex w-full my-2 bg-zinc-200 dark:bg-zinc-700 rounded-lg">
+    <div class="flex flex-col space-y-2 sm:space-y-0 sm:flex-row sm:space-x-4 my-2">
       {% if article.next_article %}
-      <div class="w-1/2 hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-l-lg">
-        <a class="flex flex-col pr-2" href="{{ SITEURL }}/{{ article.next_article.url }}">
-          <div class="mx-4 py-2 text-left">
-            <p class="text-zinc-600 dark:text-zinc-300 text-sm">« PREV PAGE</p>
-            <p class="text-left py-1 hover:underline">{{ article.next_article.title }}</p>
+      <div class="w-full sm:w-1/2 py-2 bg-zinc-300 dark:bg-zinc-800 rounded">
+        <a href="{{ SITEURL }}/{{ article.next_article.url }}">
+          <div class="flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 flex-shrink-0">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+            </svg>
+            <p class="truncate flex-1 text-left py-1 hover:underline">
+              {{ article.next_article.title }}
+            </p>
           </div>
         </a>
       </div>
       {% else %}
-      <div class="w-1/2 rounded-l-lg"></div>
+      <div class="w-full sm:w-1/2 rounded"></div>
       {% endif %}
       {% if article.prev_article %}
-      <div class="w-1/2 hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-r-lg ">
-        <a class="flex flex-col" href="{{ SITEURL }}/{{ article.prev_article.url }}">
-          <div class="text-right mx-4 py-2">
-            <p class="text-zinc-600 dark:text-zinc-300 text-sm">NEXT PAGE »</p>
-            <p class="text-right py-1 hover:underline">{{ article.prev_article.title }}</p>
+      <div class="w-full sm:w-1/2 py-2 bg-zinc-300 dark:bg-zinc-800 rounded">
+        <a href="{{ SITEURL }}/{{ article.prev_article.url }}">
+          <div class="flex items-center space-x-2">
+            <p class="truncate flex-1 text-right py-1 hover:underline">{{ article.prev_article.title }}</p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 flex-shrink-0">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
           </div>
         </a>
       </div>
