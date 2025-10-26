@@ -6,6 +6,7 @@ Tags: Data Structure, Algorithm
 Slug: ci-speical-version-007-three-sum
 Figure: offer.png
 Authors: Apple
+Status: draft
 
 > 题目:给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a ，b ，c ，使得 a + b + c = 0 ？请找出所有和为 0 且 不重复 的三元组。
 

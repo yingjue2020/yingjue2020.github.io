@@ -6,6 +6,7 @@ Tags: Data Structure, Algorithm
 Slug: ci-speical-version-001-divide
 Figure: offer.png
 Authors: Apple
+Status: draft
 
 > 题目:输入2个int型整数，它们进行除法计算并返回商，要求不得使
 > 用乘号'*'、除号/及求余符号'%'。当发生溢出时，返回最大的整数值。假设

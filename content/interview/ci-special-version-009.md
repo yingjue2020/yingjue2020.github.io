@@ -6,6 +6,7 @@ Tags: Data Structure, Algorithm
 Slug: ci-speical-version-009-num-subarray-product-less-than-k
 Figure: offer.png
 Authors: Apple
+Status: draft
 
 > 题目:给定一个正整数数组 nums和整数 k ，请找出该数组内乘积小于 k 的连续的子数组的个数。
 

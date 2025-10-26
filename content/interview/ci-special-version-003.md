@@ -6,6 +6,7 @@ Tags: Data Structure, Algorithm
 Slug: ci-speical-version-003-count-bits
 Figure: offer.png
 Authors: Apple
+Status: draft
 
 > 题目:给定一个非负整数 n ，请计算 0 到 n 之间的每个数字的二进制表示中 1 的个数，并输出一个数组。
 

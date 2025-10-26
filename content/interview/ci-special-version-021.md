@@ -6,6 +6,7 @@ Tags: Data Structure, Algorithm
 Slug: ci-speical-version-021-remove-nth-from-end
 Figure: offer.png
 Authors: Apple
+Status: draft
 
 > 题目:给定一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。
 

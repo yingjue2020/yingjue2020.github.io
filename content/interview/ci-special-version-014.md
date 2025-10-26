@@ -6,6 +6,7 @@ Tags: Data Structure, Algorithm
 Slug: ci-speical-version-014-check-inclusion
 Figure: offer.png
 Authors: Apple
+Status: draft
 
 > 题目:给定两个字符串 s1 和 s2，写一个函数来判断 s2 是否包含 s1 的某个变位词。换句话说，第一个字符串的排列之一是第二个字符串的 子串 。
 

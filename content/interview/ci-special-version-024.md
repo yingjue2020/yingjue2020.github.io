@@ -6,6 +6,7 @@ Tags: Data Structure, Algorithm
 Slug: ci-speical-version-024-reverse-list
 Figure: offer.png
 Authors: Apple
+Status: draft
 
 > 题目:给定单链表的头节点 head ，请反转链表，并返回反转后的链表的头节点。
 

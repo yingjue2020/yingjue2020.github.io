@@ -5,6 +5,7 @@ Category: Interview
 Tags: Data Structure, Algorithm
 Slug: ci-11-min-number-in-rotate-array
 Figure: offer.png
+Status: draft
 
 > 题目:把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。
 

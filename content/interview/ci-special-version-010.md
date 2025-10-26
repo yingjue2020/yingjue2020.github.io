@@ -6,6 +6,7 @@ Tags: Data Structure, Algorithm
 Slug: ci-speical-version-010-subarray-sum
 Figure: offer.png
 Authors: Apple
+Status: draft
 
 > 题目:给定一个整数数组和一个整数 k ，请找到该数组中和为 k 的连续子数组的个数。
 

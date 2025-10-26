@@ -6,6 +6,7 @@ Tags: Data Structure, Algorithm
 Slug: ci-speical-version-019-valid-palindrome
 Figure: offer.png
 Authors: Apple
+Status: draft
 
 > 题目:给定一个非空字符串 s，请判断如果 最多 从字符串中删除一个字符能否得到一个回文字符串。
 

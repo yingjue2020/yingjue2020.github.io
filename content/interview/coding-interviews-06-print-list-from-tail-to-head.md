@@ -5,6 +5,7 @@ Category: Interview
 Tags: Data Structure, Algorithm
 Slug: ci-06-print-list-from-tail-to-head
 Figure: offer.png
+Status: draft
 
 
 > 输入一个链表，按链表从尾到头的顺序返回一个ArrayList。

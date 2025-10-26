@@ -6,6 +6,7 @@ Tags: Data Structure, Algorithm
 Slug: ci-speical-version-006-two-sum
 Figure: offer.png
 Authors: Apple
+Status: draft
 
 > 题目:给定一个已按照 升序排列 的整数数组 numbers ，请你从数组中找出两个数满足相加之和等于目标数 target 。
 

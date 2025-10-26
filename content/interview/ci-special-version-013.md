@@ -6,6 +6,7 @@ Tags: Data Structure, Algorithm
 Slug: ci-speical-version-013-sum-region
 Figure: offer.png
 Authors: Apple
+Status: draft
 
 > 题目:给定一个二维矩阵 matrix，以下类型的多个请求：
 
