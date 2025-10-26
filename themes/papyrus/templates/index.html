@@ -3,11 +3,11 @@
 <div class="mb-3">
   <ul class="flex-col space-y-6">
     {% for article in articles_page.object_list %}
-      {% include "article-card.html" %}
+      {% include "include/article-card.html" %}
     {% endfor %}
   </ul>
 </div>
 {% if articles_page.has_other_pages() %}
-  {% include 'pagination.html' %}
+  {% include 'include/pagination.html' %}
 {% endif %}
 {% endblock content %}

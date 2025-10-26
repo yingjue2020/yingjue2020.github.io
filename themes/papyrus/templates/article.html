@@ -48,26 +48,9 @@
     </div>
   </details>
   {% endif %}
-  <div class="max-w-7xl container mx-auto my-8 text-zinc-800 dark:text-zinc-300  
-              prose lg:max-w-none prose-headings:text-zinc-800 prose-headings:dark:text-zinc-300 
-              prose-h1:text-3xl lg:prose-h1:text-3xl prose-headings:font-semibold 
-              prose-pre:bg-zinc-200 prose-pre:text-zinc-800
-              dark:prose-pre:bg-zinc-800 dark:prose-pre:text-zinc-200
-              prose-blockquote:text-zinc-800
-              dark:prose-blockquote:text-zinc-200
-              prose-a:text-slate-600 prose-a:font-normal
-              dark:prose-a:text-slate-400
-              dark:prose-strong:text-zinc-200 
-              dark:prose-code:text-zinc-200
-              dark:prose-code:bg-zinc-800
-              prose-code:bg-zinc-200
-              prose-code:font-light
-              prose-img:rounded-md
-              sm:text-left md:text-justify
-              ">
+  <article class="mt-4 prose dark:prose-invert">
     {{ article.content }}
-    <!-- <div class="aspect-w-16 aspect-h-9 mx-auto"></div> CSS placeholder -->
-  </div>
+  </article>
   <footer class="flex flex-col mt-10 ">
     <ul class="flex flex-wrap">
       {% for tag in article.tags|sort %}
@@ -79,7 +62,7 @@
     </ul>
     <div class="flex flex-col space-y-2 sm:space-y-0 sm:flex-row sm:space-x-4 my-2">
       {% if article.next_article %}
-      <div class="w-full sm:w-1/2 py-2 bg-zinc-300 dark:bg-zinc-800 rounded">
+      <div class="w-full sm:w-1/2 py-2 bg-neutral-100 dark:bg-neutral-700 text-zinc-800 dark:text-zinc-300 rounded">
         <a href="{{ SITEURL }}/{{ article.next_article.url }}">
           <div class="flex items-center space-x-2">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 flex-shrink-0">
@@ -95,7 +78,7 @@
       <div class="w-full sm:w-1/2 rounded"></div>
       {% endif %}
       {% if article.prev_article %}
-      <div class="w-full sm:w-1/2 py-2 bg-zinc-300 dark:bg-zinc-800 rounded">
+      <div class="w-full sm:w-1/2 py-2 bg-neutral-100 dark:bg-neutral-700 text-zinc-800 dark:text-zinc-300 rounded">
         <a href="{{ SITEURL }}/{{ article.prev_article.url }}">
           <div class="flex items-center space-x-2">
             <p class="truncate flex-1 text-right py-1 hover:underline">{{ article.prev_article.title }}</p>
@@ -107,23 +90,9 @@
       </div>
       {% endif %}
     </div>
-    {% if SHARE %}
-    <div class="flex bg-zinc-200 dark:bg-zinc-700 py-2 rounded-lg justify-center space-x-2 text-xs">
-      {% for name, link in SHARE %}
-      <ul>
-        <li class="bg-gray-900 p-1 text-white rounded-md">
-          <a target="_blank" rel="noopener noreferrer" title="{{ name }}" aria-label="share Features on {{ name }}"
-            href="{{ link }}{{ SITEURL }}/{{ article.url }}">
-            <i class="fab fa-{{ name }} fa-2x" aria-hidden="true"></i>
-          </a>
-        </li>
-      </ul>
-      {% endfor %}
-    </div>
-    {% endif %}
   </footer>
-  <div>
-    {% include 'disqus_script.html' %}
+  <div class="mt-10">
+    {% include 'include/comments.html' %}
   </div>
 </main>
 

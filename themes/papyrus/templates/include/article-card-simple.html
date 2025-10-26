@@ -1,10 +1,9 @@
-<div>
-<a href="{{ SITEURL }}/{{ article.url }}">
-<li class="flex items-center space-x-4 p-2 bg-white dark:bg-zinc-800 rounded-lg">
-    <div class="flex-shrink-0">
-        <img src="{{ SITEURL }}/images/{% if article.figure %}cover/{{ article.figure }}{% else %}logo.png{% endif %}" class="h-25 w-auto" />
+<li class="flex items-center space-x-2 p-2 bg-neutral-100 dark:bg-zinc-800 rounded-lg">
+    <div class="flex-none">
+        <img src="{{ SITEURL }}/images/{% if article.figure %}cover/{{ article.figure }}{% else %}logo.png{% endif %}" class="h-15 w-auto" />
     </div>
-    <div class="flex flex-col flex-1">
+    <a href="{{ SITEURL }}/{{ article.url }}">
+    <div class="flex-col grow">
         <h1 class="font-semibold text-lg">{{ article.title}}</h1>
         <div class="flex text-xs">
             <time>{{ article.date|strftime('%B %d, %Y') }}</time>
@@ -19,10 +18,6 @@
             {% endif %}
             </div>
         </div>
-        <div class="flex-grow mt-4">
-            {{ article.summary }}
-        </div>
     </div>
+    </a>
 </li>
-</a>
-</div>

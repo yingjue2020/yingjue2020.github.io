@@ -8,12 +8,9 @@
     <meta name="generator" content="Pelican" />
     <meta name="description" content="{{ SITENAME }} Blog Posts">
     <title>{% block title %} {{ SITENAME }} {% endblock %}</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style type="text/tailwindcss">
-        @custom-variant dark (&:where(.dark, .dark *));
-    </style>
     <script defer src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/alpine-3.15.0.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/main.css" />
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygment.css" />
     <link rel="shortcut icon" href="{{ SITEURL }}/favicon.ico" type="image/x-icon">
     {% if FEED_ALL_ATOM %}
@@ -27,11 +24,12 @@
         type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
     {% endif %}
     {% endblock head %}
+    {% include "include/ga.html" %}
 </head>
 
 <body :class="{ 'dark': dark }" class="min-h-screen text-zinc-800 bg-neutral-100 dark:bg-neutral-900 dark:text-zinc-300">
-    <nav class="sticky top-0 z-50 bg-neutral-50 dark:bg-neutral-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-10 flex items-center justify-between">
+    <nav class="sticky top-0 z-50 text-zinc-800 bg-neutral-100 dark:bg-neutral-900 dark:text-zinc-300">
+        <div class="max-w-5xl mx-auto px-2 h-10 flex items-center justify-between">
             <a class="h-8 flex items-center" href="{{ SITEURL }}"><img src="{{ SITEURL }}/images/logo.png" alt="{{ SITENAME }}" class="h-6 w-auto" /></a>
             <ul class="flex justify-center items-center">
                 <li class="h-8">
@@ -58,11 +56,11 @@
             
         </div>
     </nav>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
+    <div class="max-w-5xl mx-auto py-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
         <!-- Content Area -->
-        <main class="lg:col-span-3">
+        <main class="lg:col-span-2 p-4 rounded shadow bg-white dark:bg-neutral-900">
         {% if article %}
-        <nav class="bg-neutral-200 dark:bg-neutral-700 text-zinc-800 dark:text-zinc-300 p-2 mb-5 rounded-lg" aria-label="Breadcrumb">
+        <nav class="bg-neutral-100 dark:bg-neutral-700 text-zinc-800 dark:text-zinc-300 p-2 mb-5" aria-label="Breadcrumb">
             <ul class="p-0 inline-flex items-center">
                 <li class="flex items-center">
                     <a href="{{ SITEURL }}/" class="text-zinc-800 dark:text-zinc-300 inline-flex items-center">
@@ -94,7 +92,7 @@
             </ul>
         </nav>
         {% elif tag %}
-        <nav class="bg-neutral-200 dark:bg-neutral-700 text-zinc-800 dark:text-zinc-300 p-2 mb-5 rounded-lg" aria-label="Breadcrumb">
+        <nav class="bg-neutral-100 dark:bg-neutral-700 text-zinc-800 dark:text-zinc-300 p-2 mb-5 rounded-lg" aria-label="Breadcrumb">
             <ul class="p-0 inline-flex">
                 <li class="flex items-center">
                     <a href="{{ SITEURL }}/" class="text-zinc-800 dark:text-zinc-300 inline-flex items-center">
@@ -150,7 +148,7 @@
             </ul>
         </nav>
         {% elif category %}
-        <nav class="bg-neutral-200 dark:bg-neutral-700 text-zinc-800 dark:text-zinc-300 p-2 mb-5 rounded-lg" aria-label="Breadcrumb">
+        <nav class="bg-neutral-100 dark:bg-neutral-700 text-zinc-800 dark:text-zinc-300 p-2 mb-5 rounded-lg" aria-label="Breadcrumb">
             <ul class="p-0 inline-flex">
                 <li class="flex items-center">
                     <a href="{{ SITEURL }}/" class="text-zinc-800 dark:text-zinc-300 inline-flex items-center">
@@ -192,7 +190,7 @@
             {% endif %}
 
             <!-- Recent Posts -->
-            <div class="bg-white dark:bg-zinc-800 rounded-lg p-4">
+            <div class="bg-white dark:bg-zinc-800 rounded p-4">
                 <h3 class="font-semibold text-xl mb-3">Recent Posts</h3>
                 {% if RECENT_POST_COUNT is not defined %}
                     {% set RECENT_POST_COUNT = 5 %}
@@ -205,7 +203,7 @@
             </div>
 
             <!-- Categories -->
-            <div class="bg-white dark:bg-zinc-800 shadow rounded-lg p-4">
+            <div class="bg-white dark:bg-zinc-800 shadow rounded p-4">
                 <h3 class="font-semibold text-xl mb-3">Categories</h3>
                 <ul class="space-y-2 pl-2">
                     {% for category, articles in categories %}
@@ -215,7 +213,7 @@
             </div>
         </aside>
     </div>
-    <footer class="w-full text-xs mt-12 py-6 text-zinc-600 dark:text-zinc-400 border-t border-gray-200 dark:border-gray-700">
+    <footer class="w-full text-xs mt-12 py-6 text-zinc-800 bg-neutral-100 dark:bg-neutral-900 dark:text-zinc-300 border-t border-gray-200 dark:border-gray-700">
         <div class="text-center">
             {% if COPYRIGHT %}
                 {{ COPYRIGHT }}
