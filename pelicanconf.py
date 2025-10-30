@@ -126,9 +126,9 @@ EXTRA_PATH_METADATA = {
 }
 
 GISGUS_REPO_NAME = "yingjue2020/yingjue2020.github.io"
-GISGUS_REPO_ID = "MDEwOlJlcG9zaXRvcnkxODE5OTg4NTc="
+GISGUS_REPO_ID = "R_kgDOMwhjTw"
 GISGUS_CATEGORY_NAME = "Announcements"
-GISGUS_CATEGORY_ID = "DIC_kwDOCtkVCc4Culyf"
+GISGUS_CATEGORY_ID = "DIC_kwDOMwhjT84Cu69s"
 
 SUBTITLE = "Yingjue's Blog"
 SUBTEXT = "I'm a drawer and author in the YINGJUE Blog."
